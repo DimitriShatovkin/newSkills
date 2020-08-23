@@ -4,10 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NewSkills.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="440" Width="835">
-    <StackPanel>
-
+             mc:Ignorable="d" Width="1089.85" Height="525">
+    <StackPanel Margin="0,-105,-150.4,-150.2" Height="780" Width="1140" VerticalAlignment="Top" HorizontalAlignment="Left" >
         <Grid Height="25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -16,12 +14,14 @@
             </Grid.ColumnDefinitions>
             <Label x:Name="label1" Content=""  Grid.Column="0"/>
             <Label x:Name="label2" Content=""  Grid.Column="1"/>
-            <!--<Image Width="20" Height="20" Grid.Column="2" Source="/NewSkills;component/Images/timer.png" HorizontalAlignment="Right" Margin="0,0,60,0"/>-->
             <Label x:Name="timerTxt" Content="00:00:00"  FontWeight="Bold" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,0,0"/>
         </Grid>
-        <StackPanel Orientation="Vertical" Height="351" Margin="40,0,0,0">
-            <TextBlock Margin="70,220,20,0"  FontSize="18" ><Run Text=""  x:Name="exampleText"/></TextBlock>
-            <TextBox Margin="0,20,20.2,0" FontSize="18" Text="{Binding InputText}" x:Name="typingTextTxt" TextChanged="typingTextChanged" PreviewKeyDown="previewKeyDown" Height="26" RenderTransformOrigin="0.5,0.423" HorizontalAlignment="Right" Width="705"/>
+        <StackPanel Orientation="Vertical" Height="895" RenderTransformOrigin="0.5,0.47">
+            <Label x:Name="suggestionMessage" FontWeight="Bold" Content="Подсказки" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Background="PowderBlue" Width="400" FontSize="16" />
+            <TextBlock Margin="226,350,201,0"  FontSize="18" Height="25" ><Run Text="" x:Name="exampleText"/></TextBlock>
+            <TextBox Margin="0,20,201,0" FontSize="18" Text="{Binding InputText}" x:Name="typingTextTxt" TextChanged="typingTextChanged" 
+                     PreviewKeyDown="previewKeyDown" Height="25" RenderTransformOrigin="0.5,0.423" HorizontalAlignment="Right" Width="715"/>
+            <Image x:Name="image" Height="228"  Margin="224,20,201,0" Source="{Binding ImageOpenClose.Source}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

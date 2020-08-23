@@ -16,14 +16,14 @@ namespace NewSkills.Controller
         public string path;
 
         public StreamReaderController(string fileName) {
-            path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TextFolder\"+fileName+".txt");
+            path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\TextFolder\\"+fileName+".txt";
             file = File.ReadAllLines(path);
         }
 
 
         public static void writeLetter(char letter, int hashCode) 
         {
-            string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TextFolder\logs.txt");
+            string filePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\TextFolder\\logs.txt";
 
             // Create a file to write to.
             using (StreamWriter sw = File.AppendText(filePath))
@@ -36,7 +36,6 @@ namespace NewSkills.Controller
         public void writeLogs(string className, Exception exeption)
         {
            string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TextFolder\logs.txt");
-
 
             // Create a file to write to.
             using (StreamWriter sw = File.AppendText(filePath))
