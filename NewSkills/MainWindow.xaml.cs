@@ -39,6 +39,7 @@ namespace NewSkills
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
             this.Loaded += MainWindow_Loaded;
         }
 

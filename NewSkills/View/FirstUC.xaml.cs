@@ -5,9 +5,8 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using NewSkills.ViewModel;
 using NewSkills.Controller;
-using System.Windows.Media;
-using System.Drawing;
-using Tulpep.NotificationWindow;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace NewSkills.View
 {
@@ -19,17 +18,18 @@ namespace NewSkills.View
 
         private StreamReaderController streamReaderController;
         public bool spaceButtonClicked = false;
-        private PopupNotifier popUp = null;
+        
         private string inputText;
         private int workTime = 1500;
         private int pauseTime = 300;
         private DispatcherTimer timer;
         private bool aktiveWorkTime = false;
-        NextLetter nextLetterClass = new NextLetter();
+        NextLetterService nextLetterClass = new NextLetterService();
         private int fileLine = 1;
         private string[] wholeText;
         private int fileLength;
         private bool writeLetter = false;
+        private int countOfSpaceClicks = 0; 
 
         public FirstUC(string fileName)
         {
@@ -102,15 +102,20 @@ namespace NewSkills.View
                         else
                         {
                             char nextLetterToShow = nextLetter(typingText, sampleText);
-                            writeLetter = true;
+                            //writeLetter = true;
                             if (nextLetterToShow.ToString() != "|")
                             {
                                 nextLetterClass.getLetter(nextLetterToShow);
                                 string message = nextLetterClass.returnLetter;
                                 popUpToRightCase(message);
+
+                                nextLetterClass.getPicture(nextLetterToShow);
+                                string imagePath = nextLetterClass.returPicturePath;
+                                image.Source = new BitmapImage(new Uri(imagePath));
+
                                 this.typingTextTxt.Text.Replace("|", " ");
                             }
-                            else if (nextLetterToShow.ToString() == "|")
+                            else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
                             {
                                 popUpToClickSpace();
                                 this.typingTextTxt.Text.Replace("|", " ");
@@ -177,15 +182,18 @@ namespace NewSkills.View
 
                     if (typingLastLetter == exampleLastLetter)
                     {
+                        writeLetter = true; 
                         return true;
                     }
                     else
                     {
+                        writeLetter = false;
                         return false;
                     }
                 }
                 else
                 {
+                    writeLetter = false;
                     return false;
                 }
             }
@@ -193,11 +201,13 @@ namespace NewSkills.View
             {
                 if (typingTextLenght == -1)
                 {
+                    writeLetter = true;
                     return true;
                 }
                 else
                 {
                     streamReaderController.writeLogs(this.GetType().Name, e);
+                    writeLetter = false;
                     return false;
                 }
             }
@@ -237,7 +247,6 @@ namespace NewSkills.View
 
         private void setTime(int time)
         {
-
             if (time / 60 >= 10 && time % 60 >= 10)
             {
                 timerTxt.Content = string.Format("00:{0}:{1}", time / 60, time % 60); // 13: 50
@@ -256,23 +265,6 @@ namespace NewSkills.View
             }
         }
 
-        private void playSuccessVideo()
-        {
-            //Video video = null;
-            //try
-            //{
-            //    video = new Video("play.avi");
-            //}
-            //catch (Exception ex)
-            //{
-            //    video = null;
-            //}
-            //finally
-            //{
-            //    if (video != null) video.Play();
-            //}
-
-        }
         private void popUpToWrongCase()
         {
            
@@ -280,26 +272,13 @@ namespace NewSkills.View
 
         private void popUpToRightCase(String message)
         {
-         
-
-            Font font = new Font("Times New Roman", 14.0f);
-            popUp = new PopupNotifier();
-            popUp.ContentText = message;
-            popUp.ContentFont = font;
-            popUp.BodyColor = System.Drawing.ColorTranslator.FromHtml("#F0F8FF");
-            popUp.Delay = 5000;
-            popUp.AnimationDuration = 1;
-            popUp.Popup();
+            suggestionMessage.Content = message;
         }
 
         private void popUpToClickSpace()
         {
-            Font font = new Font("Times New Roman", 14.0f);
-            popUp = new PopupNotifier();
-            popUp.ContentText = "Нажмите пробел";
-            popUp.BodyColor = System.Drawing.ColorTranslator.FromHtml("#F0F8FF");
-            popUp.ContentFont = font;
-            popUp.Popup();
+            suggestionMessage.Content = "Нажмите пробел большим пальцем";
+            image.Source = new BitmapImage(new Uri(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_space.png"));
         }
     }
 }
