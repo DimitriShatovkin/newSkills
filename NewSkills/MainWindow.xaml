@@ -5,16 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewSkills"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="800" 
-        Width="1400"
+        Title="New Skills" 
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        AllowsTransparency="True"
+        WindowStyle="ThreeDBorderWindow"
+        AllowsTransparency="False"
         Background="Transparent">
-
     <Window.Resources>
-
         <!--#region Button Visual Style-->
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -201,7 +197,7 @@
     <Grid>
 
         <!--create a new grid-->
-        <Grid Margin="20" Background="#F0F8FF">
+        <Grid  Background="#F0F8FF">
 
             <!--add a shadow effect-->
             <Grid.Effect>
@@ -213,7 +209,7 @@
             </Grid.Effect>
 
             <!--add a stack panel to the left of the grid-->
-            <StackPanel Width="100"
+            <StackPanel Width="50"
                         HorizontalAlignment="Left"
                         Background="#87CEFA">
 
@@ -226,7 +222,7 @@
                         Margin="0,180,0,20" Style="{DynamicResource HomeBtnStyle}" MouseEnter="Home_MouseEnter" MouseLeave="Home_MouseLeave">
 
                     <!--add image-->
-                    <Image Source="Img/home_icon.png"
+                    <Image Source="Resources/home_icon.png"
                            Stretch="None">
                     </Image>
 
@@ -239,7 +235,7 @@
                         Margin="0,0,0,10" Style="{DynamicResource ProfileBtnStyle}" MouseEnter="Profile_MouseEnter" MouseLeave="Profile_MouseLeave">
 
                     <!--add image-->
-                    <Image Source="Img/profile_icon.png"
+                    <Image Source="Resources/profile_icon.png"
                            Stretch="None">
                     </Image>
 
@@ -252,7 +248,7 @@
                         Margin="0,10,0,0" Style="{DynamicResource SettingsBtnStyle}" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave">
 
                     <!--add image-->
-                    <Image Source="Img/settings_icon.png"
+                    <Image Source="Resources/settings_icon.png"
                            Stretch="None">
                     </Image>
 
@@ -261,7 +257,7 @@
             </StackPanel>
 
             <!--add a header to the grid-->
-            <Grid Height="80"
+            <Grid Height="50"
                   VerticalAlignment="Top"
                   Background="#87CEFA">
 
@@ -274,7 +270,7 @@
                            Foreground="#87CEFA">
                 </TextBlock>
 
-                <!--add an exit button-->
+                <!--add an exit button--><!--
                 <Button Height="40"
                         Width="40"
                         Background="Transparent"
@@ -283,17 +279,17 @@
                         HorizontalAlignment="Right"
                         Margin="0,0,20,0" Style="{DynamicResource CloseBtnStyle}" Click="Button_Click">
 
-                    <!--add image-->
-                    <Image Source="Img/close_icon.png"
+                    --><!--add image--><!--
+                    <Image Source="Resources/close_icon.png"
                            Stretch="None">
                     </Image>
 
-                </Button>
+                </Button>-->
 
             </Grid>
 
             <!--add a footer-->
-            <Grid Height="80"
+            <Grid Height="50"
                   VerticalAlignment="Bottom"
                   Background="#87CEFA">
             </Grid>

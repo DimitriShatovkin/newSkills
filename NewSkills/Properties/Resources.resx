@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,310 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="close_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inputText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inputText.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="keyBoard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\keyBoard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_0sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_0sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_1sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_1sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_2sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_2sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_3sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_3sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_4sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_4sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_5sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_5sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_6sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_6sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_7sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_7sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_8sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_8sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_9sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_9sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_a2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_b1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_b2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_b2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_bl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_bl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_bsign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_bsign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ch1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ch1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ch2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_comma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_comma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_d1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_d1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_d2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_d2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_e1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_e1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_e2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_e2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ee2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ee2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_f1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_f1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_f2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_f2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_g1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_g1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_g2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_g2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_h1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_h1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_h2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_h2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_hard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_hard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_i1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_i1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_i2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_i2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_j1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_j1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_j2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_j2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ja1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ja1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ja2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ja2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_jo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_jo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_jo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_jo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ju1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ju1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ju2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ju2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_k1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_k1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_k2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_k2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_l1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_l1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_l2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_l2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_m1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_m1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_m2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_m2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_n1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_n2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_n2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_o1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_o1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_o2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_o2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_p1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_p1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_p2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_p2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_quals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_quals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_r1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_r1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_r2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_r2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_s1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_s1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_s2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_s2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_sche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_sche1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_sche2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_sche2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_score" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\letter_score.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_semicolon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_semicolon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_sh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_sh1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_sh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_sh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_space" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_space.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_t1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_t1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_t2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_t2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_u1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_u1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_u2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_u2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_underscore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_underscore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_z1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_z1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_z2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_z2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ze1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ze1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_ze2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_ze2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_zg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_zg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter_zg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter_zg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="profile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

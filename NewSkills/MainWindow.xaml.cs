@@ -39,6 +39,8 @@ namespace NewSkills
         public MainWindow()
         {
             InitializeComponent();
+            this.Height = (System.Windows.SystemParameters.PrimaryScreenHeight);
+            this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth);
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
             this.Loaded += MainWindow_Loaded;
         }
@@ -72,6 +74,7 @@ namespace NewSkills
                 //    viewS.DataContext = vmS;
                 //    this.OutputView.Content = viewS;
                 //    break;
+                //    
             }
         }
 
