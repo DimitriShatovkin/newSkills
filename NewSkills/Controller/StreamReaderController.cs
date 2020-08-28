@@ -1,41 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Interop;
 
 namespace NewSkills.Controller
 {
     class StreamReaderController
     {
         public string[] file { get; set; }
-        public string path;
 
-        public StreamReaderController(string fileName) {
-            path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\TextFolder\\"+fileName+".txt";
-            file = File.ReadAllLines(path);
+        public StreamReaderController(string fileName)
+        {
+            string sb = getFileContent("inputText", "txt");
+            file = sb.Split('\n');
         }
 
 
-        public static void writeLetter(char letter, int hashCode) 
+        public static void writeLetter(char letter, int hashCode)
         {
-            string filePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\TextFolder\\logs.txt";
+            var assembly = Assembly.GetExecutingAssembly();
+            string filePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith("logs.txt"));
 
             // Create a file to write to.
             using (StreamWriter sw = File.AppendText(filePath))
             {
-                sw.WriteLine(String.Format("\nLetter "+letter +": Hashcode:" + hashCode +"\n"));
+                sw.WriteLine(String.Format("\nLetter " + letter + ": Hashcode:" + hashCode + "\n"));
             }
         }
 
 
         public void writeLogs(string className, Exception exeption)
         {
-           string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"TextFolder\logs.txt");
+            var assembly = Assembly.GetExecutingAssembly();
+            string filePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith("logs.txt"));
 
             // Create a file to write to.
             using (StreamWriter sw = File.AppendText(filePath))
@@ -47,9 +52,22 @@ namespace NewSkills.Controller
                 // Get the line number from the stack frame
                 var line = frame.GetFileLineNumber();
 
-                sw.WriteLine(String.Format("\nClass:" + className + " Exception: " + exeption.ToString() + "Line: " + line +"\n"));
+                sw.WriteLine(String.Format("\nClass:" + className + " Exception: " + exeption.ToString() + "Line: " + line + "\n"));
             }
-          
+        }
+
+        public static string getFileContent(string fileName, string fileExtension)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string name = "NewSkills.Resources." + fileName + "." + fileExtension;
+
+            using (Stream stream = assembly.GetManifestResourceStream(name))
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
         }
     }
 }

@@ -7,6 +7,11 @@ using NewSkills.ViewModel;
 using NewSkills.Controller;
 using System.IO;
 using System.Windows.Media.Imaging;
+using System.Windows;
+using System.Reflection;
+using System.Drawing;
+using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace NewSkills.View
 {
@@ -29,7 +34,7 @@ namespace NewSkills.View
         private string[] wholeText;
         private int fileLength;
         private bool writeLetter = false;
-        private int countOfSpaceClicks = 0; 
+        private int correctTextLenght = 0;
 
         public FirstUC(string fileName)
         {
@@ -97,7 +102,7 @@ namespace NewSkills.View
                             popUpToWrongCase();
                             writeLetter = false;
                             this.typingTextTxt.Text = typingText.Substring(0, typingText.Length - 1).Replace("|", " "); // обрезать последнюю букву, если возникла ошибка
-                            this.typingTextTxt.Select(typingTextTxt.Text.Length, typingTextTxt.Text.Length); //Поставить курсор на последнее место
+                            this.typingTextTxt.CaretIndex = correctTextLenght; //Поставить курсор на последнее место
                         }
                         else
                         {
@@ -107,11 +112,12 @@ namespace NewSkills.View
                             {
                                 nextLetterClass.getLetter(nextLetterToShow);
                                 string message = nextLetterClass.returnLetter;
-                                popUpToRightCase(message);
+                                popUpToRightCase(message); // set text to "Подсказки"
+                                
+                                Bitmap bitmap = new System.Drawing.Bitmap(nextLetterClass.getPicture(nextLetterToShow));//it is in the memory now
+                                var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                                image.Source = bitmapSource;
 
-                                nextLetterClass.getPicture(nextLetterToShow);
-                                string imagePath = nextLetterClass.returPicturePath;
-                                image.Source = new BitmapImage(new Uri(imagePath));
 
                                 this.typingTextTxt.Text.Replace("|", " ");
                             }
@@ -155,7 +161,8 @@ namespace NewSkills.View
             }
             catch (Exception exeption)
             {
-                streamReaderController.writeLogs(this.GetType().Name, exeption);
+                MessageBox.Equals(exeption, exeption);
+                // streamReaderController.writeLogs(this.GetType().Name, exeption);
             }
         }
 
@@ -182,6 +189,7 @@ namespace NewSkills.View
 
                     if (typingLastLetter == exampleLastLetter)
                     {
+                        correctTextLenght = typingTextLenght+1; 
                         writeLetter = true; 
                         return true;
                     }
@@ -199,14 +207,16 @@ namespace NewSkills.View
             }
             catch (Exception e)
             {
+                MessageBox.Equals(e,e);
                 if (typingTextLenght == -1)
                 {
+                    correctTextLenght = typingTextLenght+1;
                     writeLetter = true;
                     return true;
                 }
                 else
                 {
-                    streamReaderController.writeLogs(this.GetType().Name, e);
+                    //streamReaderController.writeLogs(this.GetType().Name, e);
                     writeLetter = false;
                     return false;
                 }
@@ -278,7 +288,9 @@ namespace NewSkills.View
         private void popUpToClickSpace()
         {
             suggestionMessage.Content = "Нажмите пробел большим пальцем";
-            image.Source = new BitmapImage(new Uri(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_space.png"));
+            Bitmap bitmap = new System.Drawing.Bitmap(Properties.Resources.letter_space);//it is in the memory now
+            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+            image.Source = bitmapSource;
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using NewSkills.Controller;
 using System.IO;
+using System.Windows;
+using System.Drawing;
 
 namespace NewSkills.ViewModel
 {
@@ -100,7 +102,7 @@ namespace NewSkills.ViewModel
             Letter_BrackertRight = ')',
             Letter_Percent = '%',
             Letter_Number = '№',
-            Letter_Stern= '*'
+            Letter_Stern = '*'
         }
 
         public void getLetter(char letter)
@@ -333,7 +335,7 @@ namespace NewSkills.ViewModel
                     returnLetter = "'.'  Правая - 4-м вниз";
                     break;
                 case (char)alphabet.Letter_Score:
-                    returnLetter = "'-'  Правая - 4-м направо вершина";
+                    returnLetter = "' - '  Правая - 4-м направо вершина";
                     break;
                 case (char)alphabet.Letter_UnderScore:
                     returnLetter = "'_'  Шифт + Правая - 4-м направо вершина";
@@ -368,272 +370,186 @@ namespace NewSkills.ViewModel
             }
         }
 
-        public void getPicture(char letter)
+        public Bitmap getPicture(char letter)
         {
             switch (letter)
             {
                 case (char)alphabet.Letter_А:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_a1.png";
-                    break;
+                    return Properties.Resources.letter_a1;
                 case (char)alphabet.Letter_a:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_a2.png";
-                    break;
+                    return Properties.Resources.letter_a2;
                 case (char)alphabet.Letter_B:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_b1.png";
-                    break;
+                    return Properties.Resources.letter_b1;
                 case (char)alphabet.Letter_b:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_b2.png";
-                    break;
+                    return Properties.Resources.letter_b2;
                 case (char)alphabet.Letter_W:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_v1.png";
-                    break;
+                    return Properties.Resources.letter_v1;                   
                 case (char)alphabet.Letter_w:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_v2.png";
-                    break;
+                    return Properties.Resources.letter_v2;
                 case (char)alphabet.Letter_G:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_g1.png";
-                    break;
+                    return Properties.Resources.letter_g1;
                 case (char)alphabet.Letter_g:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_g2.png";
-                    break;
+                    return Properties.Resources.letter_g2;
                 case (char)alphabet.Letter_D:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_d1.png";
-                    break;
+                    return Properties.Resources.letter_d1;
                 case (char)alphabet.Letter_d:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_d2.png";
-                    break;
+                    return Properties.Resources.letter_d2;
                 case (char)alphabet.Letter_E:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_e1.png";
-                    break;
+                    return Properties.Resources.letter_e1;
                 case (char)alphabet.Letter_e:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_e2.png";
-                    break;
+                    return Properties.Resources.letter_e2;
                 case (char)alphabet.Letter_JO:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_jo1.png";
-                    break;
+                    return Properties.Resources.letter_jo1;
                 case (char)alphabet.Letter_jo:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_jo2.png";
-                    break;
+                    return Properties.Resources.letter_jo2;
                 case (char)alphabet.Letter_ZG:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_zg1.png";
-                    break;
+                    return Properties.Resources.letter_zg1;
                 case (char)alphabet.Letter_zg:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_zg2.png";
-                    break;
+                    return Properties.Resources.letter_zg2;
                 case (char)alphabet.Letter_Z:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_z1.png";
-                    break;
+                    return Properties.Resources.letter_z1;
                 case (char)alphabet.Letter_z:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_z2.png";
-                    break;
+                    return Properties.Resources.letter_z2;
                 case (char)alphabet.Letter_I:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_i1.png";
-                    break;
+                    return Properties.Resources.letter_i1;
                 case (char)alphabet.Letter_i:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_i2.png";
-                    break;
+                    return Properties.Resources.letter_i2;
                 case (char)alphabet.Letter_II:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_j1.png";
-                    break;
+                    return Properties.Resources.letter_j1;
                 case (char)alphabet.Letter_ii:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_j2.png";
-                    break;
+                    return Properties.Resources.letter_j2;
                 case (char)alphabet.Letter_K:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_k1.png";
-                    break;
+                    return Properties.Resources.letter_k1;
                 case (char)alphabet.Letter_k:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_k2.png";
-                    break;
+                    return Properties.Resources.letter_k2;
                 case (char)alphabet.Letter_L:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_l1.png";
-                    break;
+                    return Properties.Resources.letter_l1;
                 case (char)alphabet.Letter_l:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_l2.png";
-                    break;
+                    return Properties.Resources.letter_l2;
                 case (char)alphabet.Letter_M:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_m1.png";
-                    break;
+                    return Properties.Resources.letter_m1;
                 case (char)alphabet.Letter_m:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_m2.png";
-                    break;
+                    return Properties.Resources.letter_m2;
                 case (char)alphabet.Letter_N:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_n1.png";
-                    break;
+                    return Properties.Resources.letter_n1;
                 case (char)alphabet.Letter_n:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_n2.png";
-                    break;
+                    return Properties.Resources.letter_n2;
                 case (char)alphabet.Letter_O:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_o1.png";
-                    break;
+                    return Properties.Resources.letter_o1;
                 case (char)alphabet.Letter_o:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_o2.png";
-                    break;
+                    return Properties.Resources.letter_o2;
                 case (char)alphabet.Letter_P:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_p1.png";
-                    break;
+                    return Properties.Resources.letter_p1;
                 case (char)alphabet.Letter_p:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_p2.png";
-                    break;
+                    return Properties.Resources.letter_p2;
                 case (char)alphabet.Letter_R:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_r1.png";
-                    break;
+                    return Properties.Resources.letter_r1;
                 case (char)alphabet.Letter_r:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_r2.png";
-                    break;
+                    return Properties.Resources.letter_r2;
                 case (char)alphabet.Letter_S:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_s1.png";
-                    break;
+                    return Properties.Resources.letter_s1;
                 case (char)alphabet.Letter_s:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_s2.png";
-                    break;
+                    return Properties.Resources.letter_s2;
                 case (char)alphabet.Letter_T:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_t1.png";
-                    break;
+                    return Properties.Resources.letter_t1;
                 case (char)alphabet.Letter_t:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_t2.png";
-                    break;
+                    return Properties.Resources.letter_t2;
                 case (char)alphabet.Letter_Y:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_u1.png";
-                    break;
+                    return Properties.Resources.letter_u1;
                 case (char)alphabet.Letter_y:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_u2.png";
-                    break;
+                    return Properties.Resources.letter_u2;
                 case (char)alphabet.Letter_F:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_f1.png";
-                    break;
+                    return Properties.Resources.letter_f1;
                 case (char)alphabet.Letter_f:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_f2.png";
-                    break;
+                    return Properties.Resources.letter_f2;
                 case (char)alphabet.Letter_X:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_x1.png";
-                    break;
+                    return Properties.Resources.letter_x1;
                 case (char)alphabet.Letter_x:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_x2.png";
-                    break;
+                    return Properties.Resources.letter_x2;
                 case (char)alphabet.Letter_ZE:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ze1.png";
-                    break;
+                    return Properties.Resources.letter_ze1;
                 case (char)alphabet.Letter_ze:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ze2.png";
-                    break;
+                    return Properties.Resources.letter_ze2;
                 case (char)alphabet.Letter_CH:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ch1.png";
-                    break;
+                    return Properties.Resources.letter_ch1;
                 case (char)alphabet.Letter_ch:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ch2.png";
-                    break;
+                    return Properties.Resources.letter_ch2;
                 case (char)alphabet.Letter_Sh:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_sh1.png";
-                    break;
+                    return Properties.Resources.letter_sh1;
                 case (char)alphabet.Letter_sh:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_sh2.png";
-                    break;
+                    return Properties.Resources.letter_sh2;
                 case (char)alphabet.Letter_SCHe:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_sche1.png";
-                    break;
+                    return Properties.Resources.letter_sche1;
                 case (char)alphabet.Letter_sche:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_sche2.png";
-                    break;
+                    return Properties.Resources.letter_sche2;
                 case (char)alphabet.Letter_HARD:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_hard.png";
-                    break;
+                    return Properties.Resources.letter_hard;
                 case (char)alphabet.Letter_bl:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_bl.png";
-                    break;
+                    return Properties.Resources.letter_bl;
                 case (char)alphabet.Letter_Soft:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_bsign.png";
-                    break;
+                    return Properties.Resources.letter_bsign;
                 case (char)alphabet.Letter_EE:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ee1.png";
-                    break;
+                    return Properties.Resources.letter_ee1;
                 case (char)alphabet.Letter_ee:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ee2.png";
-                    break;
+                    return Properties.Resources.letter_ee2;
                 case (char)alphabet.Letter_You:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ju1.png";
-                    break;
+                    return Properties.Resources.letter_ju1;
                 case (char)alphabet.Letter_you:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ju2.png";
-                    break;
+                    return Properties.Resources.letter_ju2;
                 case (char)alphabet.Letter_JA:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ja1.png";
-                    break;
+                    return Properties.Resources.letter_ja1;
                 case (char)alphabet.Letter_ja:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_ja2.png";
-                    break;
+                    return Properties.Resources.letter_ja2;
                 case (char)alphabet.Letter_1:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_1.png";
-                    break;
+                    return Properties.Resources.letter_1;
                 case (char)alphabet.Letter_2:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_2.png";
-                    break;
+                    return Properties.Resources.letter_2;
                 case (char)alphabet.Letter_3:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_3.png";
-                    break;
+                    return Properties.Resources.letter_3;
                 case (char)alphabet.Letter_4:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_4.png";
-                    break;
+                    return Properties.Resources.letter_4;
                 case (char)alphabet.Letter_5:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_5.png";
-                    break;
+                    return Properties.Resources.letter_5;
                 case (char)alphabet.Letter_6:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_6.png";
-                    break;
+                    return Properties.Resources.letter_6;
                 case (char)alphabet.Letter_7:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_7.png";
-                    break;
+                    return Properties.Resources.letter_7;
                 case (char)alphabet.Letter_8:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_8.png";
-                    break;
+                    return Properties.Resources.letter_8;
                 case (char)alphabet.Letter_9:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_9.png";
-                    break;
+                    return Properties.Resources.letter_9;
                 case (char)alphabet.Letter_0:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_0.png";
-                    break;
+                    return Properties.Resources.letter_0;
                 case (char)alphabet.Letter_ExclamationMark:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_1sign.png";
-                    break;
+                    return Properties.Resources.letter_1sign;
                 case (char)alphabet.Letter_Quotes:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_2sign.png";
-                    break;
+                    return Properties.Resources.letter_2sign;
                 case (char)alphabet.Letter_Number:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_3sign.png";
-                    break;
+                    return Properties.Resources.letter_3sign;
                 case (char)alphabet.Letter_Semicolon:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_4sign.png";
-                    break;
+                    return Properties.Resources.letter_4sign;
                 case (char)alphabet.Letter_Percent:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_5sign.png";
-                    break;
+                    return Properties.Resources.letter_5sign;
                 case (char)alphabet.Letter_Colon:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_6sign.png";
-                    break;
+                    return Properties.Resources.letter_6sign;
                 case (char)alphabet.Letter_QuestionMark:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_7sign.png";
-                    break;
+                    return Properties.Resources.letter_7sign;
                 case (char)alphabet.Letter_Stern:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_8sign.png";
-                    break;
+                    return Properties.Resources.letter_8sign;
                 case (char)alphabet.Letter_BracketLeft:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_9sign.png";
-                    break;
+                    return Properties.Resources.letter_9sign;
                 case (char)alphabet.Letter_BrackertRight:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_0sign.png";
-                    break;
+                    return Properties.Resources.letter_0sign;
                 case (char)alphabet.Letter_Comma:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_comma.png";
-                    break;
+                    return Properties.Resources.letter_comma;
                 case (char)alphabet.Letter_Punkt:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_punkt.png";
-                    break;
+                    return Properties.Resources.letter_point;
                 case (char)alphabet.Letter_Score:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter-.png";
-                    break;
+                    return Properties.Resources.letter_underscore;
                 case (char)alphabet.Letter_UnderScore:
-                    returPicturePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\ImgLetters\\letter_.png";
-                    break;
+                    return Properties.Resources.letter_score;
             }
+            return Properties.Resources.letter_a1;
         }
     }
 }

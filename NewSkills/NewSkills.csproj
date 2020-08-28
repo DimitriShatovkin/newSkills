@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NewSkills</RootNamespace>
     <AssemblyName>NewSkills</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -80,7 +80,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -94,6 +93,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\StreamReaderController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\FirstViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
@@ -131,20 +135,15 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="NewSkills_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -155,12 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Img\close_icon.png" />
-    <Resource Include="Img\home_icon.png" />
-    <Resource Include="Img\profile_icon.png" />
-    <Resource Include="Img\settings_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -175,102 +168,314 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TextFolder\inputText.txt" />
-    <Resource Include="TextFolder\logs.txt" />
+    <Resource Include="Resources\settings_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImgLetters\keyBoard.png" />
-    <Resource Include="ImgLetters\letter+.png" />
-    <Resource Include="ImgLetters\letter-.png" />
-    <Resource Include="ImgLetters\letter=.png" />
-    <Resource Include="ImgLetters\letter_.png" />
-    <Resource Include="ImgLetters\letter_0.png" />
-    <Resource Include="ImgLetters\letter_1.png" />
-    <Resource Include="ImgLetters\letter_1sign.png" />
-    <Resource Include="ImgLetters\letter_2.png" />
-    <Resource Include="ImgLetters\letter_2sign.png" />
-    <Resource Include="ImgLetters\letter_3.png" />
-    <Resource Include="ImgLetters\letter_3sign.png" />
-    <Resource Include="ImgLetters\letter_4.png" />
-    <Resource Include="ImgLetters\letter_4sign.png" />
-    <Resource Include="ImgLetters\letter_5.png" />
-    <Resource Include="ImgLetters\letter_5sign.png" />
-    <Resource Include="ImgLetters\letter_6.png" />
-    <Resource Include="ImgLetters\letter_6sign.png" />
-    <Resource Include="ImgLetters\letter_7.png" />
-    <Resource Include="ImgLetters\letter_7sign.png" />
-    <Resource Include="ImgLetters\letter_8.png" />
-    <Resource Include="ImgLetters\letter_8sign.png" />
-    <Resource Include="ImgLetters\letter_9.png" />
-    <Resource Include="ImgLetters\letter_9sign.png" />
-    <Resource Include="ImgLetters\letter_a1.png" />
-    <Resource Include="ImgLetters\letter_a2.png" />
-    <Resource Include="ImgLetters\letter_b1.png" />
-    <Resource Include="ImgLetters\letter_b2.png" />
-    <Resource Include="ImgLetters\letter_bl.png" />
-    <Resource Include="ImgLetters\letter_ch1.png" />
-    <Resource Include="ImgLetters\letter_ch2.png" />
-    <Resource Include="ImgLetters\letter_comma.png" />
-    <Resource Include="ImgLetters\letter_d1.png" />
-    <Resource Include="ImgLetters\letter_d2.png" />
-    <Resource Include="ImgLetters\letter_e1.png" />
-    <Resource Include="ImgLetters\letter_e2.png" />
-    <Resource Include="ImgLetters\letter_ee1.png" />
-    <Resource Include="ImgLetters\letter_ee2.png" />
-    <Resource Include="ImgLetters\letter_f1.png" />
-    <Resource Include="ImgLetters\letter_f2.png" />
-    <Resource Include="ImgLetters\letter_g1.png" />
-    <Resource Include="ImgLetters\letter_g2.png" />
-    <Resource Include="ImgLetters\letter_h1.png" />
-    <Resource Include="ImgLetters\letter_h2.png" />
-    <Resource Include="ImgLetters\letter_hard.png" />
-    <Resource Include="ImgLetters\letter_i1.png" />
-    <Resource Include="ImgLetters\letter_i2.png" />
-    <Resource Include="ImgLetters\letter_j1.png" />
-    <Resource Include="ImgLetters\letter_j2.png" />
-    <Resource Include="ImgLetters\letter_ja1.png" />
-    <Resource Include="ImgLetters\letter_ja2.png" />
-    <Resource Include="ImgLetters\letter_jo1.png" />
-    <Resource Include="ImgLetters\letter_jo2.png" />
-    <Resource Include="ImgLetters\letter_ju1.png" />
-    <Resource Include="ImgLetters\letter_ju2.png" />
-    <Resource Include="ImgLetters\letter_k1.png" />
-    <Resource Include="ImgLetters\letter_k2.png" />
-    <Resource Include="ImgLetters\letter_l1.png" />
-    <Resource Include="ImgLetters\letter_l2.png" />
-    <Resource Include="ImgLetters\letter_m1.png" />
-    <Resource Include="ImgLetters\letter_m2.png" />
-    <Resource Include="ImgLetters\letter_n1.png" />
-    <Resource Include="ImgLetters\letter_n2.png" />
-    <Resource Include="ImgLetters\letter_o1.png" />
-    <Resource Include="ImgLetters\letter_o2.png" />
-    <Resource Include="ImgLetters\letter_p1.png" />
-    <Resource Include="ImgLetters\letter_p2.png" />
-    <Resource Include="ImgLetters\letter_r1.png" />
-    <Resource Include="ImgLetters\letter_r2.png" />
-    <Resource Include="ImgLetters\letter_s1.png" />
-    <Resource Include="ImgLetters\letter_s2.png" />
-    <Resource Include="ImgLetters\letter_sche1.png" />
-    <Resource Include="ImgLetters\letter_sche2.png" />
-    <Resource Include="ImgLetters\letter_semicolon.png" />
-    <Resource Include="ImgLetters\letter_sh1.png" />
-    <Resource Include="ImgLetters\letter_sh2.png" />
-    <Resource Include="ImgLetters\letter_space.png" />
-    <Resource Include="ImgLetters\letter_t1.png" />
-    <Resource Include="ImgLetters\letter_t2.png" />
-    <Resource Include="ImgLetters\letter_u1.png" />
-    <Resource Include="ImgLetters\letter_u2.png" />
-    <Resource Include="ImgLetters\letter_v1.png" />
-    <Resource Include="ImgLetters\letter_v2.png" />
-    <Resource Include="ImgLetters\letter_z1.png" />
-    <Resource Include="ImgLetters\letter_z2.png" />
-    <Resource Include="ImgLetters\letter_ze1.png" />
-    <Resource Include="ImgLetters\letter_ze2.png" />
-    <Resource Include="ImgLetters\letter_zg1.png" />
-    <Resource Include="ImgLetters\letter_zg2.png" />
+    <Resource Include="Resources\home_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImgLetters\letter_0sign.png" />
+    <Resource Include="Resources\profile_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_0sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_1sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_2sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_3sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_4sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_5sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_6sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_7sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_8sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_9sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\letter_a1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_a2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_b1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_b2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_bl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_bsign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ch2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_comma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_d1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_d2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_e1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_e2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ee1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ee2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_g1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_g2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_h1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_h2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_i1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_i2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_j1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_j2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ja1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ja2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_jo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_jo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ju1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ju2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_k1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_k2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_l1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_l2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_m1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_m2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_n1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_n2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_o1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_o2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_p1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_p2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_quals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_s1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_s2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_sche1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_sche2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_semicolon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_sh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_sh2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_space.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_t1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_t2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_x1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_x2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_z1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_z2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ze1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_ze2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_zg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_zg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\inputText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\logs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\letter_score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\letter_point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\letter_underscore.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -42,10 +42,7 @@ namespace NewSkills.ViewModel
         }
         private void OnShowMessage()
         {
-            _MainCodeBehind.ShowMessage("Привет от MainUC");
-        }
-
-
-        
+            _MainCodeBehind.ShowMessage("New Skills");
+        }   
     }
 }
