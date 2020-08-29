@@ -4,6 +4,8 @@ using System.Windows.Controls.Primitives;
 using System;
 using NewSkills.ViewModel;
 using NewSkills.View;
+using System.Windows.Threading;
+using NewSkills.Controller;
 
 namespace NewSkills
 {
@@ -36,6 +38,10 @@ namespace NewSkills
     /// </summary>
     public partial class MainWindow : Window, IMainWindowsCodeBehind
     {
+        // Timer Variables
+        private DispatcherTimer timer;
+        // End of Timer Variables
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +49,40 @@ namespace NewSkills
             this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth);
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
             this.Loaded += MainWindow_Loaded;
+
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        // ежесекундый запуск метода, для таймера
+        // тут высчитывается, должна ли работать пауза или печать
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (UtilController.WorkTime > 0)
+            {
+                UtilController.ActivateWorkOrPause = false;
+                UtilController.WorkTime--;
+                setTime(UtilController.WorkTime);
+            }
+            else if (UtilController.PauseTime > 0)
+            {
+                UtilController.ActivateWorkOrPause = true;
+                UtilController.PauseTime--;
+                setTime(UtilController.PauseTime);
+            }
+
+            if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == false)
+            {
+                UtilController.ActivateWorkOrPause = true;
+                UtilController.PauseTime = 10;
+            }
+            else if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
+            {
+                UtilController.WorkTime = 20;
+                UtilController.ActivateWorkOrPause = false;
+            }
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -77,6 +117,56 @@ namespace NewSkills
                 //    
             }
         }
+
+
+        private void setTime(int time)
+        {
+            progress.Content = UtilController.ProgessInPerCent;
+
+            if (time / 60 >= 10 && time % 60 >= 10)
+            {
+                if (UtilController.ActivateWorkOrPause == false)
+                {
+                    timerTxt.Content = string.Format("Время печатать 00:{0}:{1}", time / 60, time % 60); // 13: 50
+                }
+                else
+                {
+                    timerTxt.Content = string.Format("Пауза 00:{0}:{1}", time / 60, time % 60); // 13: 50
+                }
+            }
+            else if (time / 60 >= 10 && time % 60 < 10)
+            {
+                if (UtilController.ActivateWorkOrPause == false)
+                {
+                    timerTxt.Content = string.Format("Время печатать 00:{0}:0{1}", time / 60, time % 60); // 13:05
+                }
+                else {
+                    timerTxt.Content = string.Format("Пауза 00:{0}:0{1}", time / 60, time % 60); // 13:05
+                }
+            }
+            else if (time / 60 <= 10 && time % 60 >= 10)
+            {
+                if (UtilController.ActivateWorkOrPause == false)
+                {
+                    timerTxt.Content = string.Format("Время печатать 00:0{0}:{1}", time / 60, time % 60); // 09:59
+                }
+                else
+                {
+                    timerTxt.Content = string.Format("Пауза 00:0{0}:{1}", time / 60, time % 60); // 09:59
+                }
+            }
+            else if (time / 60 <= 10 && time % 60 < 10)
+            {
+                if (UtilController.ActivateWorkOrPause == false)
+                {
+                    timerTxt.Content = string.Format("Время печатать 00:0{0}:0{1}", time / 60, time % 60); // 11:05
+                }
+                else {
+                    timerTxt.Content = string.Format("Пауза 00:0{0}:0{1}", time / 60, time % 60); // 11:05
+                }
+            }
+        }
+
 
         private void Home_MouseEnter(object sender, MouseEventArgs e)
         {
