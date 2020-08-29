@@ -20,21 +20,22 @@ namespace NewSkills.View
     /// </summary>
     public partial class FirstUC : UserControl
     {
+        // Timer Variables
+        private DispatcherTimer timer;
+        // End of Timer Variables
 
         private StreamReaderController streamReaderController;
         public bool spaceButtonClicked = false;
-        
         private string inputText;
-        private int workTime = 1500;
-        private int pauseTime = 300;
-        private DispatcherTimer timer;
-        private bool aktiveWorkTime = false;
+     
+        
         NextLetterService nextLetterClass = new NextLetterService();
         private int fileLine = 1;
         private string[] wholeText;
         private int fileLength;
         private bool writeLetter = false;
         private int correctTextLenght = 0;
+
 
         public FirstUC(string fileName)
         {
@@ -43,40 +44,27 @@ namespace NewSkills.View
             streamReaderController = new StreamReaderController(fileName);
             wholeText = streamReaderController.file;
             fileLength = wholeText.Length;
-
             exampleText.Text = streamReaderController.file[0];
+
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
-            timer.Start();
+            timer.Start();           
         }
+
 
         // ежесекундый запуск метода, для таймера
         // тут высчитывается, должна ли работать пауза или печать
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (workTime > 0)
-            {
-                workTime--;
-                setTime(workTime);
-            }
-            else if (pauseTime > 0)
-            {
-                pauseTime--;
-                setTime(pauseTime);
-            }
-
-            if (workTime == 0 && pauseTime == 0 && aktiveWorkTime == false)
-            {
-                typingTextTxt.IsReadOnly = true;
-                aktiveWorkTime = true;
-                pauseTime = 300;
-            }
-            else if (workTime == 0 && pauseTime == 0 && aktiveWorkTime == true)
+            //Спросить, нужно ли заблокировать рабочую область для паузы или нет
+            if (UtilController.ActivateWorkOrPause == false)
             {
                 typingTextTxt.IsReadOnly = false;
-                workTime = 1500;
-                aktiveWorkTime = false;
+            }
+            else
+            {
+                typingTextTxt.IsReadOnly = true;
             }
         }
 
@@ -106,6 +94,8 @@ namespace NewSkills.View
                         }
                         else
                         {
+                            UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
+
                             char nextLetterToShow = nextLetter(typingText, sampleText);
                             //writeLetter = true;
                             if (nextLetterToShow.ToString() != "|")
@@ -147,7 +137,7 @@ namespace NewSkills.View
                             else
                             {
                                 this.typingTextTxt.IsReadOnly = true;
-                                timer.Stop();
+                                UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, true);
                             }
                         }
                         else
@@ -181,7 +171,6 @@ namespace NewSkills.View
                     char[] chartsOfTypingText = typingText.ToCharArray();
 
                     char[] chartsOfExampleText = sampleText.ToCharArray();
-
 
                     char typingLastLetter = chartsOfTypingText[typingTextLenght];
 
@@ -252,26 +241,6 @@ namespace NewSkills.View
             else
             {
                 spaceButtonClicked = false;
-            }
-        }
-
-        private void setTime(int time)
-        {
-            if (time / 60 >= 10 && time % 60 >= 10)
-            {
-                timerTxt.Content = string.Format("00:{0}:{1}", time / 60, time % 60); // 13: 50
-            }
-            else if (time / 60 >= 10 && time % 60 < 10)
-            {
-                timerTxt.Content = string.Format("00:{0}:0{1}", time / 60, time % 60); // 13:05
-            }
-            else if (time / 60 <= 10 && time % 60 >= 10)
-            {
-                timerTxt.Content = string.Format("00:0{0}:{1}", time / 60, time % 60); // 09:59
-            }
-            else if (time / 60 <= 10 && time % 60 < 10)
-            {
-                timerTxt.Content = string.Format("00:0{0}:0{1}", time / 60, time % 60); // 11:05
             }
         }
 

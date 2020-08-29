@@ -153,6 +153,7 @@
         <!--#endregion-->
         
         <!--#region Close Button Style-->
+        
         <Style x:Key="CloseBtnStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -260,7 +261,16 @@
             <Grid Height="50"
                   VerticalAlignment="Top"
                   Background="#87CEFA">
-
+                <Grid Height="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="label1" Content=""  Grid.Column="0"/>
+                    <Label x:Name="progress" Content="{Binding Value, ElementName=Slider}" ContentStringFormat="Прогресс: {0}%" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Right"/>
+                    <Label x:Name="timerTxt" Content="00:00:00"  FontWeight="Bold" Grid.Column="2" HorizontalAlignment="Right"/>
+                </Grid>
                 <!--add a header title-->
                 <TextBlock Text="New Skills"
                            FontFamily="open sans condensed"
@@ -305,7 +315,6 @@
                     <local:PopupUserControl x:Name="Header" Foreground="#E0FFFF"/>
                 </Grid>
             </Popup>
-
         </Grid>
     </Grid>
 </Window>

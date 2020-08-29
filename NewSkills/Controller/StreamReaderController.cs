@@ -16,11 +16,12 @@ namespace NewSkills.Controller
     class StreamReaderController
     {
         public string[] file { get; set; }
-
+        public static string WholeSampleText { get; set; }
         public StreamReaderController(string fileName)
         {
-            string sb = getFileContent("inputText", "txt");
-            file = sb.Split('\n');
+            string sampleText = getFileContent("inputText", "txt");
+            WholeSampleText = sampleText;
+            file = sampleText.Split('\n');
         }
 
 
