@@ -151,9 +151,9 @@
             </Setter>
         </Style>
         <!--#endregion-->
-        
+
         <!--#region Close Button Style-->
-        
+
         <Style x:Key="CloseBtnStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -279,23 +279,6 @@
                            HorizontalAlignment="Center"
                            Foreground="#87CEFA">
                 </TextBlock>
-
-                <!--add an exit button--><!--
-                <Button Height="40"
-                        Width="40"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right"
-                        Margin="0,0,20,0" Style="{DynamicResource CloseBtnStyle}" Click="Button_Click">
-
-                    --><!--add image--><!--
-                    <Image Source="Resources/close_icon.png"
-                           Stretch="None">
-                    </Image>
-
-                </Button>-->
-
             </Grid>
 
             <!--add a footer-->
@@ -315,6 +298,7 @@
                     <local:PopupUserControl x:Name="Header" Foreground="#E0FFFF"/>
                 </Grid>
             </Popup>
+            <Label x:Name="pauseLbl" Content="Отдых 5 минут" HorizontalContentAlignment="Center" FontSize="40"  HorizontalAlignment="Center" Margin="245,136,131.6,0" VerticalAlignment="Top" Width="385"/>
         </Grid>
     </Grid>
 </Window>

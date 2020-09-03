@@ -6,6 +6,7 @@ using NewSkills.ViewModel;
 using NewSkills.View;
 using System.Windows.Threading;
 using NewSkills.Controller;
+using System.Windows.Media;
 
 namespace NewSkills
 {
@@ -80,7 +81,7 @@ namespace NewSkills
             }
             else if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
             {
-                UtilController.WorkTime = 20;
+                UtilController.WorkTime = 45;
                 UtilController.ActivateWorkOrPause = false;
             }
         }
@@ -127,10 +128,12 @@ namespace NewSkills
             {
                 if (UtilController.ActivateWorkOrPause == false)
                 {
+                    pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:{0}:{1}", time / 60, time % 60); // 13: 50
                 }
                 else
                 {
+                    UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:{0}:{1}", time / 60, time % 60); // 13: 50
                 }
             }
@@ -138,9 +141,11 @@ namespace NewSkills
             {
                 if (UtilController.ActivateWorkOrPause == false)
                 {
+                    pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:{0}:0{1}", time / 60, time % 60); // 13:05
                 }
                 else {
+                    UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:{0}:0{1}", time / 60, time % 60); // 13:05
                 }
             }
@@ -148,10 +153,12 @@ namespace NewSkills
             {
                 if (UtilController.ActivateWorkOrPause == false)
                 {
+                    pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:0{0}:{1}", time / 60, time % 60); // 09:59
                 }
                 else
                 {
+                    UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:0{0}:{1}", time / 60, time % 60); // 09:59
                 }
             }
@@ -159,9 +166,11 @@ namespace NewSkills
             {
                 if (UtilController.ActivateWorkOrPause == false)
                 {
+                    pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:0{0}:0{1}", time / 60, time % 60); // 11:05
                 }
                 else {
+                    UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:0{0}:0{1}", time / 60, time % 60); // 11:05
                 }
             }
