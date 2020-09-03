@@ -15,7 +15,6 @@ namespace NewSkills.ViewModel
 
         enum alphabet
         {
-
             Letter_А = 'А',
             Letter_a = 'а',
             Letter_B = 'Б',
@@ -105,269 +104,358 @@ namespace NewSkills.ViewModel
             Letter_Stern = '*'
         }
 
-        public void getLetter(char letter)
+        public NextLetterWrapper getLetter(char letter)
         {
+            NextLetterWrapper wrapper = new NextLetterWrapper();
+        
             switch (letter)
             {
                 case (char)alphabet.Letter_А:
-                    returnLetter = "'A'  Shift + Левая - 1-м на месте";
-                    break;
+                    wrapper.letterDescription = "'A'  Shift + Левая - 1-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper; 
                 case (char)alphabet.Letter_a:
-                    returnLetter = "'a'  Левая - 1-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'a'  Левая - 1-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_B:
-                    returnLetter = "'Б'  Shift + Правая - 2-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Б'  Shift + Правая - 2-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_b:
-                    returnLetter = "'б'  Правая - 2-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'б'  Правая - 2-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_W:
-                    returnLetter = "'В'  Shift + Левая - 2-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'В'  Shift + Левая - 2-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_w:
-                    returnLetter = "'в'  Левая - 2-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'в'  Левая - 2-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_G:
-                    returnLetter = "'Г'  Shift + Правая - 1-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'Г'  Shift + Правая - 1-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_g:
-                    returnLetter = "'г'  Правая - 1-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'г'  Правая - 1-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_D:
-                    returnLetter = "'Д'  Shift + Правая - 3-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'Д'  Shift + Правая - 3-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_d:
-                    returnLetter = "'д'  Правая - 3-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'д'  Правая - 3-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_E:
-                    returnLetter = "'Е'  Shift +  Левая - 1-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'Е'  Shift +  Левая - 1-м направо вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_e:
-                    returnLetter = "'е' Левая - 1-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'е' Левая - 1-м направо вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_JO:
-                    returnLetter = "'Ё'  Shift +  Левая - 1-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'Ё'  Shift +  Левая - 1-м направо вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_jo:
-                    returnLetter = "'ё' Левая - 1-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'ё' Левая - 1-м направо вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ZG:
-                    returnLetter = "'Ж' Шифт + Правая - 4-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'Ж' Шифт + Правая - 4-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_zg:
-                    returnLetter = "'ж'  Правая - 4-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'ж'  Правая - 4-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Z:
-                    returnLetter = "'З'  Шифт + Правая - 4-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'З'  Шифт + Правая - 4-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_z:
-                    returnLetter = "'з'  Правая - 4-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'з'  Правая - 4-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_I:
-                    returnLetter = "'И'  Шифт + Левая - 1-м направо вниз";
-                    break;
+                    wrapper.letterDescription =  "'И'  Шифт + Левая - 1-м направо вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_i:
-                    returnLetter = "'и'  Левая - 1-м направо вниз";
-                    break;
+                    wrapper.letterDescription =  "'и'  Левая - 1-м направо вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_II:
-                    returnLetter = "'Й'  Шифт + Левая - 4-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'Й'  Шифт + Левая - 4-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ii:
-                    returnLetter = "'й'  Левая - 4-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'й'  Левая - 4-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_K:
-                    returnLetter = "'К'  Шифт + Левая - 1-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'К'  Шифт + Левая - 1-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_k:
-                    returnLetter = "'к'  Левая - 1-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'к'  Левая - 1-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_L:
-                    returnLetter = "'Л'  Шифт + Правая - 2-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'Л'  Шифт + Правая - 2-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_l:
-                    returnLetter = "'л'  Правая - 2-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'л'  Правая - 2-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_M:
-                    returnLetter = "'М'  Шифт + Левая - 1-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'М'  Шифт + Левая - 1-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_m:
-                    returnLetter = "'м'  Левая - 1-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'м'  Левая - 1-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_N:
-                    returnLetter = "'Н'  Шифт + Правая - 1-м налево вверх";
-                    break;
+                    wrapper.letterDescription =  "'Н'  Шифт + Правая - 1-м налево вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_n:
-                    returnLetter = "'н'  Правая - 1-м налево вверх";
-                    break;
+                    wrapper.letterDescription =  "'н'  Правая - 1-м налево вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_O:
-                    returnLetter = "'О'  Шифт + Правая - 1-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'О'  Шифт + Правая - 1-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_o:
-                    returnLetter = "'о'  Правая - 1-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'о'  Правая - 1-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_P:
-                    returnLetter = "'П'  Шифт + Левая - 1-м направо на месте";
-                    break;
+                    wrapper.letterDescription =  "'П'  Шифт + Левая - 1-м направо на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_p:
-                    returnLetter = "'п'  Левая - 1-м направо на месте";
-                    break;
+                    wrapper.letterDescription =  "'п'  Левая - 1-м направо на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_R:
-                    returnLetter = "'Р'  Шифт + Правая - 1-м налево на месте";
-                    break;
+                    wrapper.letterDescription =  "'Р'  Шифт + Правая - 1-м налево на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_r:
-                    returnLetter = "'р'  Правая - 1-м налево на месте";
-                    break;
+                    wrapper.letterDescription =  "'р'  Правая - 1-м налево на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_S:
-                    returnLetter = "'С'  Шифт + Левая - 2-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'С'  Шифт + Левая - 2-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_s:
-                    returnLetter = "'с'  Левая - 2-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'с'  Левая - 2-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_T:
-                    returnLetter = "'Т'  Шифт + Правая - 1-м налево вниз";
-                    break;
+                    wrapper.letterDescription =  "'Т'  Шифт + Правая - 1-м налево вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_t:
-                    returnLetter = "'т'  Правая - 1-м налево вниз";
-                    break;
+                    wrapper.letterDescription =  "'т'  Правая - 1-м налево вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Y:
-                    returnLetter = "'У'  Шифт + Левая - 2-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'У'  Шифт + Левая - 2-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_y:
-                    returnLetter = "'у'  Левая - 2-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'у'  Левая - 2-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_F:
-                    returnLetter = "'Ф'  Шифт + Левая - 4-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'Ф'  Шифт + Левая - 4-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_f:
-                    returnLetter = "'ф'  Левая - 4-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'ф'  Левая - 4-м на месте";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_X:
-                    returnLetter = "'Х'  Шифт + Правая - 4-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'Х'  Шифт + Правая - 4-м направо вверх";
+                    wrapper.directionDescription = "LeftSpace";
+                    return wrapper;
                 case (char)alphabet.Letter_x:
-                    returnLetter = "'х'  Правая - 4-м направо вверх";
-                    break;
+                    wrapper.letterDescription =  "'х'  Правая - 4-м направо вверх";
+                    wrapper.directionDescription = "LeftSpace";
+                    return wrapper;
                 case (char)alphabet.Letter_ZE:
-                    returnLetter = "'Ц'  Шифт + Левая - 3-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'Ц'  Шифт + Левая - 3-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ze:
-                    returnLetter = "'ц'  Левая - 3-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'ц'  Левая - 3-м вверх";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_CH:
-                    returnLetter = "'Ч'  Шифт + Левая - 3-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Ч'  Шифт + Левая - 3-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ch:
-                    returnLetter = "'ч'  Левая - 3-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'ч'  Левая - 3-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Sh:
-                    returnLetter = "'Ш'  Шифт + Правая - 2-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'Ш'  Шифт + Правая - 2-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_sh:
-                    returnLetter = "'ш'  Правая - 2-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'ш'  Правая - 2-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_SCHe:
-                    returnLetter = "'Щ'  Шифт + Правая - 3-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'Щ'  Шифт + Правая - 3-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_sche:
-                    returnLetter = "'щ'  Правая - 3-м вверх";
-                    break;
+                    wrapper.letterDescription =  "'щ'  Правая - 3-м вверх";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_HARD:
-                    returnLetter = "'ъ'  Правая - 4-м направо в угол";
-                    break;
+                    wrapper.letterDescription =  "'ъ'  Правая - 4-м направо в угол";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_bl:
-                    returnLetter = "'ы'  Левая - 3-м на месте";
-                    break;
+                    wrapper.letterDescription =  "'ы'  Левая - 3-м на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Soft:
-                    returnLetter = "'ь'  Правая - 1-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'ь'  Правая - 1-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_EE:
-                    returnLetter = "'Э'  Шифт + Правая - 4-м направо на месте";
-                    break;
+                    wrapper.letterDescription =  "'Э'  Шифт + Правая - 4-м направо на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ee:
-                    returnLetter = "'э'  Правая - 4-м направо на месте";
-                    break;
+                    wrapper.letterDescription =  "'э'  Правая - 4-м направо на месте";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_You:
-                    returnLetter = "'Ю'  Шифт + Правая - 3-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Ю'  Шифт + Правая - 3-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_you:
-                    returnLetter = "'ю'  Правая - 3-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'ю'  Правая - 3-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_JA:
-                    returnLetter = "'Я'  Шифт + Левая - 4-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Я'  Шифт + Левая - 4-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ja:
-                    returnLetter = "'я'  Левая - 4-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'я'  Левая - 4-м вниз";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_1:
-                    returnLetter = "'1'  Левая - 4-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'1'  Левая - 4-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_2:
-                    returnLetter = "'2'  Левая - 3-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'2'  Левая - 3-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_3:
-                    returnLetter = "'3'  Левая - 2-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'3'  Левая - 2-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_4:
-                    returnLetter = "'4'  Левая - 1-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'4'  Левая - 1-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_5:
-                    returnLetter = "'5'  Левая - 1-м направо вершина";
-                    break;
+                    wrapper.letterDescription =  "'5'  Левая - 1-м направо вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_6:
-                    returnLetter = "'6'  Правая - 1-м налево вершина";
-                    break;
+                    wrapper.letterDescription =  "'6'  Правая - 1-м налево вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_7:
-                    returnLetter = "'7'  Правая - 1-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'7'  Правая - 1-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_8:
-                    returnLetter = "'8'  Правая - 2-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'8'  Правая - 2-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_9:
-                    returnLetter = "'9'  Правая - 3-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'9'  Правая - 3-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_0:
-                    returnLetter = "'0'  Правая - 4-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'0'  Правая - 4-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Comma:
-                    returnLetter = "','  Шифт + Правая - 4-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Запятая'  Шифт + Правая - 4-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Punkt:
-                    returnLetter = "'.'  Правая - 4-м вниз";
-                    break;
+                    wrapper.letterDescription =  "'Точка'  Правая - 4-м вниз";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Score:
-                    returnLetter = "' - '  Правая - 4-м направо вершина";
-                    break;
+                    wrapper.letterDescription =  "' Тире '  Правая - 4-м направо вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_UnderScore:
-                    returnLetter = "'_'  Шифт + Правая - 4-м направо вершина";
-                    break;
+                    wrapper.letterDescription =  "'Подчеркивание'  Шифт + Правая - 4-м направо вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_ExclamationMark:
-                    returnLetter = "'!'  Шифт + Левая - 4-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Восклицательный знак'  Шифт + Левая - 4-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_QuestionMark:
-                    returnLetter = "'?'  Шифт + Правая - 1-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Вопросителный знак'  Шифт + Правая - 1-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Semicolon:
-                    returnLetter = "';'  Шифт + Левая - 1-м вершина";
-                    break;
+                    wrapper.letterDescription =  "';'  Шифт + Левая - 1-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Colon:
-                    returnLetter = "':'  Шифт + Правая - 1-м налево вершина";
-                    break;
+                    wrapper.letterDescription =  "'Двоеточие'  Шифт + Правая - 1-м налево вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_BracketLeft:
-                    returnLetter = "'('  Шифт + Правая - 3-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Левая скоба'  Шифт + Правая - 3-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_BrackertRight:
-                    returnLetter = "')'  Шифт + Правая - 4-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Правая скоба'  Шифт + Правая - 4-м вершина";
+                    wrapper.directionDescription = "LeftHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Percent:
-                    returnLetter = "'%'  Шифт + Левая - 1-м направо вершина";
-                    break;
+                    wrapper.letterDescription =  "'Знак процента'  Шифт + Левая - 1-м направо вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Stern:
-                    returnLetter = "'*'  Шифт + Правая - 2-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Звёздочка'  Шифт + Правая - 2-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
                 case (char)alphabet.Letter_Number:
-                    returnLetter = "'№'  Шифт + Левая - 3-м вершина";
-                    break;
+                    wrapper.letterDescription =  "'Номер'  Шифт + Левая - 3-м вершина";
+                    wrapper.directionDescription = "RightHand";
+                    return wrapper;
             }
+            return new NextLetterWrapper();
         }
 
         public Bitmap getPicture(char letter)
@@ -551,5 +639,10 @@ namespace NewSkills.ViewModel
             }
             return Properties.Resources.letter_a1;
         }
-    }
+
+        public class NextLetterWrapper{
+            public string letterDescription;
+            public string directionDescription;
+        }
+   }
 }

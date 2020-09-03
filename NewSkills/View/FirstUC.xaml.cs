@@ -27,9 +27,11 @@ namespace NewSkills.View
         private StreamReaderController streamReaderController;
         public bool spaceButtonClicked = false;
         private string inputText;
-     
-        
+
+
         NextLetterService nextLetterClass = new NextLetterService();
+        NextLetterService.NextLetterWrapper nextLetterWrapper = new NextLetterService.NextLetterWrapper();
+
         private int fileLine = 1;
         private string[] wholeText;
         private int fileLength;
@@ -49,7 +51,7 @@ namespace NewSkills.View
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
-            timer.Start();           
+            timer.Start();
         }
 
 
@@ -89,21 +91,22 @@ namespace NewSkills.View
                         {
                             popUpToWrongCase();
                             writeLetter = false;
-                            this.typingTextTxt.Text = typingText.Substring(0, typingText.Length - 1).Replace("|", " "); // обрезать последнюю букву, если возникла ошибка
+                            this.typingTextTxt.Text = typingText.Substring(0, typingText.Length - 1).Replace("|", " ");//обрезать последнюю букву, если возникла ошибка
                             this.typingTextTxt.CaretIndex = correctTextLenght; //Поставить курсор на последнее место
                         }
                         else
                         {
                             UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
 
+                            char lastLetter = lastLetterBeforeClickSpace(typingText); // to detect the space direction left or right
                             char nextLetterToShow = nextLetter(typingText, sampleText);
-                            //writeLetter = true;
+
                             if (nextLetterToShow.ToString() != "|")
                             {
-                                nextLetterClass.getLetter(nextLetterToShow);
-                                string message = nextLetterClass.returnLetter;
+                                nextLetterWrapper = nextLetterClass.getLetter(nextLetterToShow);
+                                string message = nextLetterWrapper.letterDescription;
                                 popUpToRightCase(message); // set text to "Подсказки"
-                                
+
                                 Bitmap bitmap = new System.Drawing.Bitmap(nextLetterClass.getPicture(nextLetterToShow));//it is in the memory now
                                 var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                                 image.Source = bitmapSource;
@@ -113,7 +116,7 @@ namespace NewSkills.View
                             }
                             else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
                             {
-                                popUpToClickSpace();
+                                popUpToClickSpace(lastLetter);
                                 this.typingTextTxt.Text.Replace("|", " ");
                             }
                         }
@@ -156,6 +159,15 @@ namespace NewSkills.View
             }
         }
 
+        private char lastLetterBeforeClickSpace(string typingText)
+        {
+            if (typingText.Length >= 3)
+            {
+                return typingText.Substring(typingText.Length - 3).ToCharArray()[0];
+            }
+            return 'ß';
+        }
+
         //**сравнить строку с входящим текстом **/
         //И если текст был введён правильный, вернуть "bool"
         private bool getCurrentLetter(int typingTextLenght, string inputText, string sampleText)
@@ -178,8 +190,8 @@ namespace NewSkills.View
 
                     if (typingLastLetter == exampleLastLetter)
                     {
-                        correctTextLenght = typingTextLenght+1; 
-                        writeLetter = true; 
+                        correctTextLenght = typingTextLenght + 1;
+                        writeLetter = true;
                         return true;
                     }
                     else
@@ -196,10 +208,10 @@ namespace NewSkills.View
             }
             catch (Exception e)
             {
-                MessageBox.Equals(e,e);
+                MessageBox.Equals(e, e);
                 if (typingTextLenght == -1)
                 {
-                    correctTextLenght = typingTextLenght+1;
+                    correctTextLenght = typingTextLenght + 1;
                     writeLetter = true;
                     return true;
                 }
@@ -246,7 +258,7 @@ namespace NewSkills.View
 
         private void popUpToWrongCase()
         {
-           
+
         }
 
         private void popUpToRightCase(String message)
@@ -254,12 +266,22 @@ namespace NewSkills.View
             suggestionMessage.Content = message;
         }
 
-        private void popUpToClickSpace()
+        private void popUpToClickSpace(char lastLetter)
         {
-            suggestionMessage.Content = "Нажмите пробел большим пальцем";
+            NextLetterService.NextLetterWrapper lastLetterSpaceDirectionDescription = nextLetterClass.getLetter(lastLetter);
+
             Bitmap bitmap = new System.Drawing.Bitmap(Properties.Resources.letter_space);//it is in the memory now
             var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             image.Source = bitmapSource;
+
+            if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
+            {
+                suggestionMessage.Content = "Левая нулевым на месте";
+            }
+            else
+            {
+                suggestionMessage.Content = "Правая нулевым на месте";
+            }
         }
     }
 }
