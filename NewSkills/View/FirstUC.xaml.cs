@@ -23,11 +23,11 @@ namespace NewSkills.View
         // Timer Variables
         private DispatcherTimer timer;
         // End of Timer Variables
-
+        int fontVariantSettings;
         private StreamReaderController streamReaderController;
         public bool spaceButtonClicked = false;
         private string inputText;
-
+        private Label progressLabel;
 
         NextLetterService nextLetterClass = new NextLetterService();
         NextLetterService.NextLetterWrapper nextLetterWrapper = new NextLetterService.NextLetterWrapper();
@@ -39,19 +39,24 @@ namespace NewSkills.View
         private int correctTextLenght = 0;
 
 
-        public FirstUC(string fileName)
+        public FirstUC(string fileName,Label progressLabel)
         {
             InitializeComponent();
+
+            this.progressLabel = progressLabel;
+            fontVariantSettings = Properties.Settings.Default.FontVariant;
+
             this.inputText = fileName;
             streamReaderController = new StreamReaderController(fileName);
             wholeText = streamReaderController.file;
             fileLength = wholeText.Length;
             exampleText.Text = streamReaderController.file[0];
-
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
             timer.Start();
+
+
         }
 
 
@@ -60,7 +65,7 @@ namespace NewSkills.View
         private void Timer_Tick(object sender, EventArgs e)
         {
             //Спросить, нужно ли заблокировать рабочую область для паузы или нет
-            if (UtilController.ActivateWorkOrPause == false)
+            if (UtilController.ActivateWorkOrPause == false && UtilController.BlockTextFieldAndTimer == false)
             {
                 typingTextTxt.IsReadOnly = false;
             }
@@ -92,33 +97,36 @@ namespace NewSkills.View
                             popUpToWrongCase();
                             writeLetter = false;
                             this.typingTextTxt.Text = typingText.Substring(0, typingText.Length - 1).Replace("|", " ");//обрезать последнюю букву, если возникла ошибка
-                            this.typingTextTxt.CaretIndex = correctTextLenght; //Поставить курсор на последнее место
+                            if (UtilController.BlockTextFieldAndTimer != true) {
+                                this.typingTextTxt.IsReadOnly = true;
+                                this.typingTextTxt.CaretIndex = correctTextLenght; //Поставить курсор на последнее место
+                            }
                         }
                         else
                         {
-                            UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
+                            
+                                UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
 
-                            char lastLetter = lastLetterBeforeClickSpace(typingText); // to detect the space direction left or right
-                            char nextLetterToShow = nextLetter(typingText, sampleText);
+                                char lastLetter = lastLetterBeforeClickSpace(typingText); // to detect the space direction left or right
+                                char nextLetterToShow = nextLetter(typingText, sampleText);
 
-                            if (nextLetterToShow.ToString() != "|")
-                            {
-                                nextLetterWrapper = nextLetterClass.getLetter(nextLetterToShow);
-                                string message = nextLetterWrapper.letterDescription;
-                                popUpToRightCase(message); // set text to "Подсказки"
+                                if (nextLetterToShow.ToString() != "|")
+                                {
+                                    nextLetterWrapper = nextLetterClass.getLetter(nextLetterToShow, fontVariantSettings);
+                                    string message = nextLetterWrapper.letterDescription;
+                                    popUpToRightCase(message); // set text to "Подсказки"
 
-                                Bitmap bitmap = new System.Drawing.Bitmap(nextLetterClass.getPicture(nextLetterToShow));//it is in the memory now
-                                var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                                image.Source = bitmapSource;
+                                    Bitmap bitmap = new System.Drawing.Bitmap(nextLetterClass.getPicture(nextLetterToShow));//it is in the memory now
+                                    var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                                    image.Source = bitmapSource;
 
-
-                                this.typingTextTxt.Text.Replace("|", " ");
-                            }
-                            else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
-                            {
-                                popUpToClickSpace(lastLetter);
-                                this.typingTextTxt.Text.Replace("|", " ");
-                            }
+                                    this.typingTextTxt.Text.Replace("|", " ");
+                                }
+                                else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
+                                {
+                                    popUpToClickSpace(lastLetter);
+                                    this.typingTextTxt.Text.Replace("|", " ");
+                                }
                         }
                     }
 
@@ -139,8 +147,9 @@ namespace NewSkills.View
                             }
                             else
                             {
+                                UtilController.BlockTextFieldAndTimer = true;
                                 this.typingTextTxt.IsReadOnly = true;
-                                UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, true);
+                                progressLabel.Content = "100";
                             }
                         }
                         else
@@ -157,6 +166,19 @@ namespace NewSkills.View
                 MessageBox.Equals(exeption, exeption);
                 // streamReaderController.writeLogs(this.GetType().Name, exeption);
             }
+        }
+
+        //Определить конец файла и если строка закончилась, запретить печать.
+        private bool checkLengthOfFile(int fileLength)
+        {
+            if (fileLength == 1 && exampleText.Text.Length <= typingTextTxt.Text.Length)
+            {
+                typingTextTxt.IsReadOnly = true;
+                
+                UtilController.BlockTextFieldAndTimer = true;
+                return true;
+            }
+            return false;
         }
 
         private char lastLetterBeforeClickSpace(string typingText)
@@ -261,14 +283,15 @@ namespace NewSkills.View
 
         }
 
-        private void popUpToRightCase(String message)
+        private void popUpToRightCase(string message)
         {
-            suggestionMessage.Content = message;
+            suggestionMessage.Text = message;
+            this.typingTextTxt.Focus();
         }
 
         private void popUpToClickSpace(char lastLetter)
         {
-            NextLetterService.NextLetterWrapper lastLetterSpaceDirectionDescription = nextLetterClass.getLetter(lastLetter);
+            NextLetterService.NextLetterWrapper lastLetterSpaceDirectionDescription = nextLetterClass.getLetter(lastLetter, fontVariantSettings);
 
             Bitmap bitmap = new System.Drawing.Bitmap(Properties.Resources.letter_space);//it is in the memory now
             var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
@@ -276,11 +299,13 @@ namespace NewSkills.View
 
             if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
             {
-                suggestionMessage.Content = "Левая нулевым на месте";
+                suggestionMessage.Text = " Пробел «space» – левой большим на месте";
+                this.typingTextTxt.Focus();
             }
             else
             {
-                suggestionMessage.Content = "Правая нулевым на месте";
+                suggestionMessage.Text = " Пробел «space» – правой большим на месте";
+                this.typingTextTxt.Focus();
             }
         }
     }
