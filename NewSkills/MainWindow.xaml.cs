@@ -8,6 +8,7 @@ using System.Windows.Threading;
 using NewSkills.Controller;
 using System.Windows.Media;
 
+
 namespace NewSkills
 {
     public interface IMainWindowsCodeBehind
@@ -61,28 +62,31 @@ namespace NewSkills
         // тут высчитывается, должна ли работать пауза или печать
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (UtilController.WorkTime > 0)
+            if (UtilController.BlockTextFieldAndTimer == false)
             {
-                UtilController.ActivateWorkOrPause = false;
-                UtilController.WorkTime--;
-                setTime(UtilController.WorkTime);
-            }
-            else if (UtilController.PauseTime > 0)
-            {
-                UtilController.ActivateWorkOrPause = true;
-                UtilController.PauseTime--;
-                setTime(UtilController.PauseTime);
-            }
+                if (UtilController.WorkTime > 0)
+                {
+                    UtilController.ActivateWorkOrPause = false;
+                    UtilController.WorkTime--;
+                    setTime(UtilController.WorkTime);
+                }
+                else if (UtilController.PauseTime > 0)
+                {
+                    UtilController.ActivateWorkOrPause = true;
+                    UtilController.PauseTime--;
+                    setTime(UtilController.PauseTime);
+                }
 
-            if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == false)
-            {
-                UtilController.ActivateWorkOrPause = true;
-                UtilController.PauseTime = 10;
-            }
-            else if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
-            {
-                UtilController.WorkTime = 45;
-                UtilController.ActivateWorkOrPause = false;
+                if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == false)
+                {
+                    UtilController.ActivateWorkOrPause = true;
+                    UtilController.PauseTime = UtilController.AfterPauseTime;
+                }
+                else if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
+                {
+                    UtilController.WorkTime = UtilController.AfterWorkTime;
+                    UtilController.ActivateWorkOrPause = false;
+                }
             }
         }
 
@@ -102,27 +106,27 @@ namespace NewSkills
         public void LoadView(ViewType typeView)
         {
             switch (typeView)
-            {  
+            {
                 case ViewType.First:
-                    FirstUC viewF = new FirstUC("inputText");
+                    FirstUC viewF = new FirstUC("inputText",progress);
                     FirstViewModel vmF = new FirstViewModel(this);
                     viewF.DataContext = vmF;
                     this.OutputView.Content = viewF;
                     break;
-                //case ViewType.Second:
-                //    SecondUC viewS = new SecondUC();
-                //    SecondViewModel vmS = new SecondViewModel(this);
-                //    viewS.DataContext = vmS;
-                //    this.OutputView.Content = viewS;
-                //    break;
-                //    
+                case ViewType.Second:
+                    SettingsView viewS = new SettingsView();
+                    SecondViewModel vmS = new SecondViewModel(this);
+                   // viewS.DataContext = vmS;
+                    this.OutputView.Content = viewS;
+                    break;
+
             }
         }
 
 
         private void setTime(int time)
         {
-            progress.Content = UtilController.ProgessInPerCent;
+            progress.Content = UtilController.ProgessInPerCent;          
 
             if (time / 60 >= 10 && time % 60 >= 10)
             {
@@ -144,7 +148,8 @@ namespace NewSkills
                     pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:{0}:0{1}", time / 60, time % 60); // 13:05
                 }
-                else {
+                else
+                {
                     UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:{0}:0{1}", time / 60, time % 60); // 13:05
                 }
@@ -169,7 +174,8 @@ namespace NewSkills
                     pauseLbl.Visibility = Visibility.Collapsed;
                     timerTxt.Content = string.Format("Время печатать 00:0{0}:0{1}", time / 60, time % 60); // 11:05
                 }
-                else {
+                else
+                {
                     UtilController.showPause(pauseLbl, time);
                     timerTxt.Content = string.Format("Пауза 00:0{0}:0{1}", time / 60, time % 60); // 11:05
                 }
@@ -182,7 +188,7 @@ namespace NewSkills
             popup_uc.PlacementTarget = Home;
             popup_uc.Placement = PlacementMode.Right;
             popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Home";
+            Header.PopupText.Text = "Печать";
         }
 
         private void Home_MouseLeave(object sender, MouseEventArgs e)
@@ -196,7 +202,7 @@ namespace NewSkills
             popup_uc.PlacementTarget = Profile;
             popup_uc.Placement = PlacementMode.Right;
             popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Profile";
+            Header.PopupText.Text = "Профиль";
         }
 
         private void Profile_MouseLeave(object sender, MouseEventArgs e)
@@ -205,28 +211,40 @@ namespace NewSkills
             popup_uc.IsOpen = false;
         }
 
-        private void Settings_MouseEnter(object sender, MouseEventArgs e)
-        {
-            popup_uc.PlacementTarget = Settings;
-            popup_uc.Placement = PlacementMode.Right;
-            popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Settings";
-        }
-
         private void Settings_MouseLeave(object sender, MouseEventArgs e)
         {
             popup_uc.Visibility = Visibility.Collapsed;
             popup_uc.IsOpen = false;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         public void ShowMessage(string message)
         {
             throw new NotImplementedException();
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            FirstUC viewF = new FirstUC("inputText",progress);
+            FirstViewModel vmF = new FirstViewModel(this);
+            viewF.DataContext = vmF;
+            this.OutputView.Content = viewF;
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsView viewS = new SettingsView();
+            SecondViewModel vmS = new SecondViewModel(this);
+            // viewS.DataContext = vmS;
+            this.OutputView.Content = viewS;
+        }
+
+        private void Settings_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+            popup_uc.PlacementTarget = Settings;
+            popup_uc.Placement = PlacementMode.Right;
+            popup_uc.IsOpen = true;
+            Header.PopupText.Text = "Настройки";
         }
     }
 }

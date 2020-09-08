@@ -211,16 +211,24 @@
 
             <!--add a stack panel to the left of the grid-->
             <StackPanel Width="50"
+                        HorizontalAlignment="Right"
+                        Background="#87CEFA">
+            </StackPanel>
+
+            <!--add a stack panel to the left of the grid-->
+            <StackPanel Width="50"
                         HorizontalAlignment="Left"
                         Background="#87CEFA">
 
                 <!--add 3 buttons - Home, Profile and Settings-->
-
                 <Button x:Name="Home"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="0,180,0,20" Style="{DynamicResource HomeBtnStyle}" MouseEnter="Home_MouseEnter" MouseLeave="Home_MouseLeave">
+                        Margin="0,180,0,20" Style="{DynamicResource HomeBtnStyle}" 
+                        MouseEnter="Home_MouseEnter" 
+                        MouseLeave="Home_MouseLeave"
+                        Click="Home_Click">
 
                     <!--add image-->
                     <Image Source="Resources/home_icon.png"
@@ -233,7 +241,10 @@
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="0,0,0,10" Style="{DynamicResource ProfileBtnStyle}" MouseEnter="Profile_MouseEnter" MouseLeave="Profile_MouseLeave">
+                        Margin="0,0,0,10" 
+                        Style="{DynamicResource ProfileBtnStyle}" 
+                        MouseEnter="Profile_MouseEnter" 
+                        MouseLeave="Profile_MouseLeave">
 
                     <!--add image-->
                     <Image Source="Resources/profile_icon.png"
@@ -246,7 +257,11 @@
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="0,10,0,0" Style="{DynamicResource SettingsBtnStyle}" MouseEnter="Settings_MouseEnter" MouseLeave="Settings_MouseLeave">
+                        Margin="0,10,0,0"
+                        Style="{DynamicResource SettingsBtnStyle}" 
+                        MouseEnter="Settings_MouseEnter" 
+                        MouseLeave="Settings_MouseLeave"
+                        Click="Settings_Click">
 
                     <!--add image-->
                     <Image Source="Resources/settings_icon.png"
@@ -261,20 +276,23 @@
             <Grid Height="50"
                   VerticalAlignment="Top"
                   Background="#87CEFA">
-                <Grid Height="25">
+                <Grid Height="28">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="label1" Content=""  Grid.Column="0"/>
-                    <Label x:Name="progress" Content="{Binding Value, ElementName=Slider}" ContentStringFormat="Прогресс: {0}%" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Right"/>
-                    <Label x:Name="timerTxt" Content="00:00:00"  FontWeight="Bold" Grid.Column="2" HorizontalAlignment="Right"/>
+                    <Label x:Name="progress" Content="{Binding Value, ElementName=Slider}" 
+                           ContentStringFormat="Прогресс: {0}%" FontWeight="Bold" FontSize="14"
+                           Grid.Column="1" HorizontalAlignment="Right"/>
+                    <Label x:Name="timerTxt" Content="00:00:00"  FontWeight="Bold" 
+                           Grid.Column="2" HorizontalAlignment="Right" FontSize="14"/>
                 </Grid>
                 <!--add a header title-->
                 <TextBlock Text="New Skills"
                            FontFamily="open sans condensed"
-                           FontSize="26"
+                           FontSize="35"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="#87CEFA">
@@ -298,7 +316,9 @@
                     <local:PopupUserControl x:Name="Header" Foreground="#E0FFFF"/>
                 </Grid>
             </Popup>
-            <Label x:Name="pauseLbl" Content="Отдых 5 минут" HorizontalContentAlignment="Center" FontSize="40"  HorizontalAlignment="Center" Margin="245,136,131.6,0" VerticalAlignment="Top" Width="385"/>
+            <Label x:Name="pauseLbl" Content="" HorizontalContentAlignment="Center"
+                   FontSize="40"  HorizontalAlignment="Center" 
+                   Margin="245,84,131.6,0" VerticalAlignment="Top" Width="385"/>
         </Grid>
     </Grid>
 </Window>

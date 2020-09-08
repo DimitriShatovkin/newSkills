@@ -81,19 +81,8 @@ namespace NewSkills.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to А а . , _ - Б б В в Г г Д д Е е Ё ё Ж ж З з И и Й й К к Л л
-        ///М м Н н О о П п Р р С с Т т У у Ф ф Х х Ц ц Ч ч
-        ///Ш ш Щ щ ъ ы ь Э э Ю ю Я я 
-        ///1 2 3 4 5 6 7 8 9 0
-        ///, . ! ? &quot; _ - ; : ( ) % № *
-        ///В августе в окрестных лесах появляется много грибов! 
-        ///Собираемся и идём в лес; 
-        ///За деревней расстилаются широкие поля%
-        ///По тропинке направляемся к дальней роще:
-        ///Здесь всегда много грибов. ?
-        ///Из-под листика виднеется шляпка сыроежки, *
-        ///но мы решаем собирать только «благородные» ()
-        ///грибы: белые, подосиновики и подберёзо [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to телевизоре для повышения печати. 
+        ///Удачи!.
         /// </summary>
         public static string inputText {
             get {
@@ -1042,16 +1031,6 @@ namespace NewSkills.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///.
-        /// </summary>
-        public static string logs {
-            get {
-                return ResourceManager.GetString("logs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap profile_icon {
@@ -1067,6 +1046,16 @@ namespace NewSkills.Properties {
         public static System.Drawing.Bitmap settings_icon {
             get {
                 object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap success_icon {
+            get {
+                object obj = ResourceManager.GetObject("success_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
