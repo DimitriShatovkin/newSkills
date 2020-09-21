@@ -8,6 +8,7 @@
         Title="New Skills" 
         WindowStartupLocation="CenterScreen"
         WindowStyle="ThreeDBorderWindow"
+        Icon="icon.ico"
         AllowsTransparency="False"
         Background="Transparent">
     <Window.Resources>
@@ -319,6 +320,11 @@
             <Label x:Name="pauseLbl" Content="" HorizontalContentAlignment="Center"
                    FontSize="40"  HorizontalAlignment="Center" 
                    Margin="245,84,131.6,0" VerticalAlignment="Top" Width="385"/>
+            <Button x:Name="soundButton" Click="soundButton_Click" HorizontalAlignment="Left" Margin="55,57,0,0" VerticalAlignment="Top" Width="30" Height="30">
+                <StackPanel>
+                    <Image  Source="Resources/soundOn.png"/>
+                </StackPanel>
+            </Button>
         </Grid>
     </Grid>
 </Window>

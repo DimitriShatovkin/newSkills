@@ -42,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <Win32Resource>
@@ -71,10 +73,17 @@
   <PropertyGroup>
     <StartupObject>NewSkills.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -86,12 +95,17 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\LicenseServiceController.cs" />
     <Compile Include="Controller\StreamReaderController.cs" />
     <Compile Include="Controller\UtilController.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -99,14 +113,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\LicenceServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CongratulationModel.cs" />
     <Compile Include="ViewModel\FirstViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="ViewModel\NextLetterService.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\SecondViewModel.cs" />
+    <Compile Include="View\CongratulationWindow.xaml.cs">
+      <DependentUpon>CongratulationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FirstUC.xaml.cs">
       <DependentUpon>FirstUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LicenseWindow.xaml.cs">
+      <DependentUpon>LicenseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -127,9 +153,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CongratulationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FirstUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LicenseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SettingsView.xaml">
       <SubType>Designer</SubType>
@@ -154,11 +188,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="NewSkills_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\LicenceServiceRef\service.wsdl" />
+    <None Include="Service References\LicenceServiceRef\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenceServiceRef\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -482,6 +524,229 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\success_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LicenceServiceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LicenceServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LicenceServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LicenceServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LicenceService\LicenceService\NewSkillsLicenseService.csproj">
+      <Project>{bed22ef6-e699-4f40-bcd7-527312e1ae84}</Project>
+      <Name>NewSkillsLicenseService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\soundOff.png" />
+    <Resource Include="Resources\soundOn.png" />
+    <Resource Include="icon.ico" />
+    <Content Include="Resources\audio_a.wav" />
+    <None Include="Resources\audio_Zaglavnaya_CHe2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_De2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_E2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ef2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_El%272.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Em2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_En2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Er2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Es2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ge2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ha2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_I_kratnoe2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_I2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ja2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ju2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ka2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Myagkij_znak2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_O2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Pe2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Sha2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Shcha2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Te2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Tvyordyj_znak2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_U2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ve2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Y2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ye2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Yo2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ze2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Zhe2.wav.wav" />
+    <None Include="Resources\audio_Zapyataya2.wav.wav" />
+    <None Include="Resources\audio_Bukva_a2.wav.wav" />
+    <None Include="Resources\audio_Bukva_be2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ce2.wav.wav" />
+    <None Include="Resources\audio_Bukva_che2.wav.wav" />
+    <None Include="Resources\audio_Bukva_de2.wav.wav" />
+    <None Include="Resources\audio_Bukva_e2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ef2.wav.wav" />
+    <None Include="Resources\audio_Bukva_el%272.wav.wav" />
+    <None Include="Resources\audio_Bukva_em2.wav.wav" />
+    <None Include="Resources\audio_Bukva_en2.wav.wav" />
+    <None Include="Resources\audio_Bukva_er2.wav.wav" />
+    <None Include="Resources\audio_Bukva_es2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ge2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ha2.wav.wav" />
+    <None Include="Resources\audio_Bukva_i_kratnoe2.wav.wav" />
+    <None Include="Resources\audio_Bukva_i2.wav.wav" />
+    <None Include="Resources\audio_Bukva_je2.wav.wav" />
+    <None Include="Resources\audio_Bukva_jo2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ka2.wav.wav" />
+    <None Include="Resources\audio_Bukva_myagkij_znak2.wav.wav" />
+    <None Include="Resources\audio_Bukva_o2.wav.wav" />
+    <None Include="Resources\audio_Bukva_pe2.wav.wav" />
+    <None Include="Resources\audio_Bukva_sha2.wav.wav" />
+    <None Include="Resources\audio_Bukva_shcha2.wav.wav" />
+    <None Include="Resources\audio_Bukva_te2.wav.wav" />
+    <None Include="Resources\audio_Bukva_tvyordyj_znak2.wav.wav" />
+    <None Include="Resources\audio_Bukva_u2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ve2.wav.wav" />
+    <None Include="Resources\audio_Bukva_y2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ya2.wav.wav" />
+    <None Include="Resources\audio_Bukva_yu2.wav.wav" />
+    <None Include="Resources\audio_Bukva_ze2.wav.wav" />
+    <None Include="Resources\audio_Bukva_zhe2.wav.wav" />
+    <None Include="Resources\audio_Cifra_chetyre2.wav.wav" />
+    <None Include="Resources\audio_Cifra_devyat%272.wav.wav" />
+    <None Include="Resources\audio_Cifra_dva2.wav.wav" />
+    <None Include="Resources\audio_Cifra_nol%272.wav.wav" />
+    <None Include="Resources\audio_Cifra_odin2.wav.wav" />
+    <None Include="Resources\audio_Cifra_pyat%272.wav.wav" />
+    <None Include="Resources\audio_Cifra_sem%272.wav.wav" />
+    <None Include="Resources\audio_Cifra_shest%272.wav.wav" />
+    <None Include="Resources\audio_Cifra_tri2.wav.wav" />
+    <None Include="Resources\audio_Cifra_vosem%272.wav.wav" />
+    <None Include="Resources\audio_Defis2.wav.wav" />
+    <None Include="Resources\audio_Dvoetochie2.wav.wav" />
+    <None Include="Resources\audio_Kavychki2.wav.wav" />
+    <None Include="Resources\audio_Nizhnee_podchyorkivanie2.wav.wav" />
+    <None Include="Resources\audio_Nomer2.wav.wav" />
+    <None Include="Resources\audio_Plyus2.wav.wav" />
+    <None Include="Resources\audio_Probel_levoj2.wav.wav" />
+    <None Include="Resources\audio_Probel_pravoj2.wav.wav" />
+    <None Include="Resources\audio_Procent2.wav.wav" />
+    <None Include="Resources\audio_Ravno2.wav.wav" />
+    <None Include="Resources\audio_Skobka_otkryvaetsya2.wav.wav" />
+    <None Include="Resources\audio_Skobka_zakryvaetsya2.wav.wav" />
+    <None Include="Resources\audio_Tochka_s_zapyatoj2.wav.wav" />
+    <None Include="Resources\audio_Tochka2wav.wav" />
+    <None Include="Resources\audio_Vopros2.wav.wav" />
+    <None Include="Resources\audio_Vosklicatel%27nyj_znak2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_A2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Be2.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ce2.wav.wav" />
+    <None Include="Resources\audio_Bukva_a1.wav.wav" />
+    <None Include="Resources\audio_Bukva_be1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ce1.wav.wav" />
+    <None Include="Resources\audio_Bukva_che1.wav.wav" />
+    <None Include="Resources\audio_Bukva_de1.wav.wav" />
+    <None Include="Resources\audio_Bukva_e1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ef1.wav.wav" />
+    <None Include="Resources\audio_Bukva_el%271.wav.wav" />
+    <None Include="Resources\audio_Bukva_em1.wav.wav" />
+    <None Include="Resources\audio_Bukva_en1.wav.wav" />
+    <None Include="Resources\audio_Bukva_er1.wav.wav" />
+    <None Include="Resources\audio_Bukva_es1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ge1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ha1.wav.wav" />
+    <None Include="Resources\audio_Bukva_i_kratnoe1.wav.wav" />
+    <None Include="Resources\audio_Bukva_i1.wav.wav" />
+    <None Include="Resources\audio_Bukva_je1.wav.wav" />
+    <None Include="Resources\audio_Bukva_jo1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ka1.wav.wav" />
+    <None Include="Resources\audio_Bukva_myagkij_znak1.wav.wav" />
+    <None Include="Resources\audio_Bukva_o1.wav.wav" />
+    <None Include="Resources\audio_Bukva_pe1.wav.wav" />
+    <None Include="Resources\audio_Bukva_sha1.wav.wav" />
+    <None Include="Resources\audio_Bukva_shcha1.wav.wav" />
+    <None Include="Resources\audio_Bukva_te1.wav.wav" />
+    <None Include="Resources\audio_Bukva_tvyordyj_znak1.wav.wav" />
+    <None Include="Resources\audio_Bukva_u1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ve1.wav.wav" />
+    <None Include="Resources\audio_Bukva_y1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ya1.wav.wav" />
+    <None Include="Resources\audio_Bukva_yu1.wav.wav" />
+    <None Include="Resources\audio_Bukva_ze1.wav.wav" />
+    <None Include="Resources\audio_Bukva_zhe1.wav.wav" />
+    <None Include="Resources\audio_Cifra_chetyre1.wav.wav" />
+    <None Include="Resources\audio_Cifra_devyat%271.wav.wav" />
+    <None Include="Resources\audio_Cifra_dva1.wav.wav" />
+    <None Include="Resources\audio_Cifra_nol%271.wav.wav" />
+    <None Include="Resources\audio_Cifra_odin1.wav.wav" />
+    <None Include="Resources\audio_Cifra_pyat%271.wav.wav" />
+    <None Include="Resources\audio_Cifra_sem%271.wav.wav" />
+    <None Include="Resources\audio_Cifra_shest%271.wav.wav" />
+    <None Include="Resources\audio_Cifra_tri1.wav.wav" />
+    <None Include="Resources\audio_Cifra_vosem%271.wav.wav" />
+    <None Include="Resources\audio_Defis1.wav.wav" />
+    <None Include="Resources\audio_Dvoetochie1.wav.wav" />
+    <None Include="Resources\audio_Kavychki1.wav.wav" />
+    <None Include="Resources\audio_Nizhnee_podchyorkivanie1.wav.wav" />
+    <None Include="Resources\audio_Nomer1.wav.wav" />
+    <None Include="Resources\audio_Plyus1.wav.wav" />
+    <None Include="Resources\audio_Probel_levoj1.wav.wav" />
+    <None Include="Resources\audio_Probel_pravoj1.wav.wav" />
+    <None Include="Resources\audio_Procent1.wav.wav" />
+    <None Include="Resources\audio_Ravno1.wav.wav" />
+    <None Include="Resources\audio_Skobka_otkryvaetsya1.wav.wav" />
+    <None Include="Resources\audio_Skobka_zakryvaetsya1.wav.wav" />
+    <None Include="Resources\audio_Tochka_s_zapyatoj1.wav.wav" />
+    <None Include="Resources\audio_Tochka1.wav.wav" />
+    <None Include="Resources\audio_Vopros1.wav.wav" />
+    <None Include="Resources\audio_Vosklicatel%27nyj_znak1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_A1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Be1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ce1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Che1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_De1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_E1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ef1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_El%271.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Em1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_En1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Er1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Es1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ge1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ha1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_I_kratnoe1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_I1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ja1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ju1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ka1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Myagkij_znak1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_O1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Pe1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Sha1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Shcha1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Te1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Tvyordyj_znak1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_U1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ve1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Y1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ye1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Yo1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Ze1.wav.wav" />
+    <None Include="Resources\audio_Zaglavnaya_Zhe1.wav.wav" />
+    <None Include="Resources\audio_Zapyataya1.wav.wav" />
+    <Content Include="Resources\audio_ze1.1.wav" />
+    <None Include="Resources\audio_Zvezdochka2.wav.wav" />
+    <None Include="Resources\audio_Zvezdochka1.wav.wav" />
+    <Content Include="Resources\Einstein1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\Einstein.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

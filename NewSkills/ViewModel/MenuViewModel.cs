@@ -58,7 +58,7 @@ namespace NewSkills.ViewModel
         }
         private void OnLoadSecondUC()
         {
-            CodeBehind.LoadView(ViewType.Second);
+            CodeBehind.LoadView(ViewType.Settings);
         }
 
 

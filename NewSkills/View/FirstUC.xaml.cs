@@ -7,11 +7,15 @@ using NewSkills.ViewModel;
 using NewSkills.Controller;
 using System.IO;
 using System.Windows.Media.Imaging;
+using System.Media; //подключили пространство имен SoundPlayer  
 using System.Windows;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Interop;
 using System.Windows.Media;
+using NewSkills.View;
+
+
 
 namespace NewSkills.View
 {
@@ -20,6 +24,7 @@ namespace NewSkills.View
     /// </summary>
     public partial class FirstUC : UserControl
     {
+        MainWindow mainWindow;
         // Timer Variables
         private DispatcherTimer timer;
         // End of Timer Variables
@@ -28,6 +33,7 @@ namespace NewSkills.View
         public bool spaceButtonClicked = false;
         private string inputText;
         private Label progressLabel;
+        private bool soundOn;
 
         NextLetterService nextLetterClass = new NextLetterService();
         NextLetterService.NextLetterWrapper nextLetterWrapper = new NextLetterService.NextLetterWrapper();
@@ -39,13 +45,13 @@ namespace NewSkills.View
         private int correctTextLenght = 0;
 
 
-        public FirstUC(string fileName,Label progressLabel)
+        public FirstUC(string fileName, Label progressLabel, MainWindow mainWindow)
         {
             InitializeComponent();
 
+            this.mainWindow = mainWindow;
             this.progressLabel = progressLabel;
             fontVariantSettings = Properties.Settings.Default.FontVariant;
-
             this.inputText = fileName;
             streamReaderController = new StreamReaderController(fileName);
             wholeText = streamReaderController.file;
@@ -55,8 +61,6 @@ namespace NewSkills.View
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
             timer.Start();
-
-
         }
 
 
@@ -97,36 +101,42 @@ namespace NewSkills.View
                             popUpToWrongCase();
                             writeLetter = false;
                             this.typingTextTxt.Text = typingText.Substring(0, typingText.Length - 1).Replace("|", " ");//обрезать последнюю букву, если возникла ошибка
-                            if (UtilController.BlockTextFieldAndTimer != true) {
+                            if (UtilController.BlockTextFieldAndTimer != true)
+                            {
                                 this.typingTextTxt.IsReadOnly = true;
                                 this.typingTextTxt.CaretIndex = correctTextLenght; //Поставить курсор на последнее место
                             }
                         }
                         else
                         {
-                            
-                                UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
 
-                                char lastLetter = lastLetterBeforeClickSpace(typingText); // to detect the space direction left or right
-                                char nextLetterToShow = nextLetter(typingText, sampleText);
+                            UtilController.getProgressInPercent(typingText, StreamReaderController.WholeSampleText, false);//считать проценты для прогресса
 
-                                if (nextLetterToShow.ToString() != "|")
+                            char lastLetter = lastLetterBeforeClickSpace(typingText); // to detect the space direction left or right
+                            char nextLetterToShow = nextLetter(typingText, sampleText);
+
+                            if (nextLetterToShow.ToString() != "|")
+                            {
+                                nextLetterWrapper = nextLetterClass.getLetter(nextLetterToShow, fontVariantSettings);
+                                string message = nextLetterWrapper.letterDescription;
+                                popUpToRightCase(message); // set text to "Подсказки"
+
+                                //If sound "On" play sounds
+                                if (Properties.Settings.Default.SoundOn)
                                 {
-                                    nextLetterWrapper = nextLetterClass.getLetter(nextLetterToShow, fontVariantSettings);
-                                    string message = nextLetterWrapper.letterDescription;
-                                    popUpToRightCase(message); // set text to "Подсказки"
-
-                                    Bitmap bitmap = new System.Drawing.Bitmap(nextLetterClass.getPicture(nextLetterToShow));//it is in the memory now
-                                    var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                                    image.Source = bitmapSource;
-
-                                    this.typingTextTxt.Text.Replace("|", " ");
+                                    voiceMessages(nextLetterWrapper.voicePath);
                                 }
-                                else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
-                                {
-                                    popUpToClickSpace(lastLetter);
-                                    this.typingTextTxt.Text.Replace("|", " ");
-                                }
+
+
+                                image.Source = getImagePathFromProperty(nextLetterClass.getPicture(nextLetterToShow)); ;
+
+                                this.typingTextTxt.Text.Replace("|", " ");
+                            }
+                            else if (nextLetterToShow.ToString() == "|" && writeLetter == true)
+                            {
+                                popUpToClickSpace(lastLetter);
+                                this.typingTextTxt.Text.Replace("|", " ");
+                            }
                         }
                     }
 
@@ -150,6 +160,8 @@ namespace NewSkills.View
                                 UtilController.BlockTextFieldAndTimer = true;
                                 this.typingTextTxt.IsReadOnly = true;
                                 progressLabel.Content = "100";
+                                mainWindow.LoadView(ViewType.CongratulationView);
+
                             }
                         }
                         else
@@ -161,24 +173,11 @@ namespace NewSkills.View
 
                 } while (fileLength == 0);
             }
-            catch (Exception exeption)
+            catch (Exception exception)
             {
-                MessageBox.Equals(exeption, exeption);
-                // streamReaderController.writeLogs(this.GetType().Name, exeption);
+                MessageBox.Equals(exception, exception);
+                // streamReaderController.writeLogs(this.GetType().Name, exception);
             }
-        }
-
-        //Определить конец файла и если строка закончилась, запретить печать.
-        private bool checkLengthOfFile(int fileLength)
-        {
-            if (fileLength == 1 && exampleText.Text.Length <= typingTextTxt.Text.Length)
-            {
-                typingTextTxt.IsReadOnly = true;
-                
-                UtilController.BlockTextFieldAndTimer = true;
-                return true;
-            }
-            return false;
         }
 
         private char lastLetterBeforeClickSpace(string typingText)
@@ -292,21 +291,52 @@ namespace NewSkills.View
         private void popUpToClickSpace(char lastLetter)
         {
             NextLetterService.NextLetterWrapper lastLetterSpaceDirectionDescription = nextLetterClass.getLetter(lastLetter, fontVariantSettings);
+            image.Source = getImagePathFromProperty(Properties.Resources.letter_space);
 
-            Bitmap bitmap = new System.Drawing.Bitmap(Properties.Resources.letter_space);//it is in the memory now
-            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            image.Source = bitmapSource;
+            if (fontVariantSettings == 0) {
+                if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
+                {
+                    suggestionMessage.Text = " Пробел «space» – левой нулевым на месте";
+                    voiceMessages(Properties.Resources.audio_Probel_levoj2_wav);
+                    this.typingTextTxt.Focus();
+                }
+                else
+                {
+                    suggestionMessage.Text = " Пробел «space» – правой нулевым на месте";
+                    voiceMessages(Properties.Resources.audio_Probel_levoj2_wav);
+                    this.typingTextTxt.Focus();
+                }
+            }
 
-            if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
+            if (fontVariantSettings == 1)
             {
-                suggestionMessage.Text = " Пробел «space» – левой большим на месте";
-                this.typingTextTxt.Focus();
+                if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
+                {
+                    suggestionMessage.Text = " Пробел «space» – левой большим на месте";
+                    voiceMessages(Properties.Resources.audio_Probel_levoj1_wav);
+                    this.typingTextTxt.Focus();
+                }
+                else
+                {
+                    suggestionMessage.Text = " Пробел «space» – правой большим на месте";
+                    voiceMessages(Properties.Resources.audio_Probel_pravoj1_wav);
+                    this.typingTextTxt.Focus();
+                }
             }
-            else
-            {
-                suggestionMessage.Text = " Пробел «space» – правой большим на месте";
-                this.typingTextTxt.Focus();
-            }
+        }
+
+        private void voiceMessages(UnmanagedMemoryStream resourcesPath)
+        {
+            SoundPlayer sp = new SoundPlayer();
+            sp.Stream = resourcesPath;
+            sp.Play();
+        }
+
+
+        private BitmapSource getImagePathFromProperty(Bitmap resource)
+        {
+            Bitmap bitmap = new System.Drawing.Bitmap(resource);//it is in the memory now
+            return Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
         }
     }
 }
