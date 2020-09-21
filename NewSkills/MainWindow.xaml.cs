@@ -7,7 +7,9 @@ using NewSkills.View;
 using System.Windows.Threading;
 using NewSkills.Controller;
 using System.Windows.Media;
-
+using System.Drawing;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace NewSkills
 {
@@ -33,7 +35,9 @@ namespace NewSkills
     {
         Main,
         First,
-        Second
+        Settings,
+        LicenseView,
+        CongratulationView
     }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -42,11 +46,14 @@ namespace NewSkills
     {
         // Timer Variables
         private DispatcherTimer timer;
+        private int workTime = 1500;
+        private bool soundOn = false;
         // End of Timer Variables
 
         public MainWindow()
         {
             InitializeComponent();
+            checkSoundContent();
             this.Height = (System.Windows.SystemParameters.PrimaryScreenHeight);
             this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth);
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
@@ -100,7 +107,14 @@ namespace NewSkills
             this.DataContext = vm;
 
             //загрузка стартовой View
-            LoadView(ViewType.First);
+            if (Properties.Settings.Default.License == false)
+            {
+                LoadView(ViewType.LicenseView);
+            }
+            else
+            {
+                LoadView(ViewType.First);
+            }
         }
 
         public void LoadView(ViewType typeView)
@@ -108,25 +122,45 @@ namespace NewSkills
             switch (typeView)
             {
                 case ViewType.First:
-                    FirstUC viewF = new FirstUC("inputText",progress);
+                    menuVisibility(Visibility.Visible);
+                    timeReset(Visibility.Visible);
+                    FirstUC viewF = new FirstUC("inputText", progress, this);
                     FirstViewModel vmF = new FirstViewModel(this);
                     viewF.DataContext = vmF;
                     this.OutputView.Content = viewF;
                     break;
-                case ViewType.Second:
+                case ViewType.Settings:
                     SettingsView viewS = new SettingsView();
                     SecondViewModel vmS = new SecondViewModel(this);
-                   // viewS.DataContext = vmS;
+                    // viewS.DataContext = vmS;
                     this.OutputView.Content = viewS;
+                    break;
+                case ViewType.LicenseView:
+                    menuVisibility(Visibility.Hidden);
+                    timeReset(Visibility.Hidden);
+                    LicenseWindow lw = new LicenseWindow(this);
+                    lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    lw.Owner = Application.Current.MainWindow;
+                    lw.Show();
+                    break;
+                case ViewType.CongratulationView:
+                    CongratulationWindow congratulationWindow = new CongratulationWindow(this);
+                    congratulationWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    congratulationWindow.Owner = Application.Current.MainWindow;
+                    congratulationWindow.Show();
+                    congratulationWindow.loadVideo();
+
+                    //Place it in the directory of your application
+
+
                     break;
 
             }
         }
 
-
-        private void setTime(int time)
+        public void setTime(int time)
         {
-            progress.Content = UtilController.ProgessInPerCent;          
+            progress.Content = UtilController.ProgessInPerCent;
 
             if (time / 60 >= 10 && time % 60 >= 10)
             {
@@ -224,7 +258,7 @@ namespace NewSkills
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            FirstUC viewF = new FirstUC("inputText",progress);
+            FirstUC viewF = new FirstUC("inputText", progress, this);
             FirstViewModel vmF = new FirstViewModel(this);
             viewF.DataContext = vmF;
             this.OutputView.Content = viewF;
@@ -240,11 +274,57 @@ namespace NewSkills
 
         private void Settings_MouseEnter(object sender, MouseEventArgs e)
         {
-
             popup_uc.PlacementTarget = Settings;
             popup_uc.Placement = PlacementMode.Right;
             popup_uc.IsOpen = true;
             Header.PopupText.Text = "Настройки";
+        }
+
+        // 0 - visible; 1 - hidden; 2 - collapsed
+        private void menuVisibility(Visibility Visibility)
+        {
+            Home.Visibility = Visibility;
+            Profile.Visibility = Visibility;
+            Settings.Visibility = Visibility;
+        }
+
+        private void timeReset(Visibility visibility)
+        {
+            if (visibility == Visibility.Hidden)
+            {
+                timerTxt.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                UtilController.WorkTime = workTime;
+                timerTxt.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void soundButton_Click(object sender, RoutedEventArgs e)
+        {
+            checkSoundContent();
+        }
+
+
+        private void setSoundImageContent(string soundOnUri,bool soundResourceSetting)
+        {
+            soundButton.Content = new System.Windows.Controls.Image{Source = new BitmapImage(new Uri("pack://application:,,,/Resources/"+ soundOnUri + ".png")),VerticalAlignment = VerticalAlignment.Center};
+            soundOn = soundResourceSetting;
+            Properties.Settings.Default.SoundOn = soundResourceSetting;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkSoundContent() {
+
+            if (soundOn == false)
+            {
+                setSoundImageContent("soundOn", true);
+            }
+            else
+            {
+                setSoundImageContent("soundOff", false);
+            }
         }
     }
 }

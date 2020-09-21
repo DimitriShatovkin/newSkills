@@ -34,5 +34,29 @@ namespace NewSkills.Properties {
                 this["FontVariant"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool License {
+            get {
+                return ((bool)(this["License"]));
+            }
+            set {
+                this["License"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SoundOn {
+            get {
+                return ((bool)(this["SoundOn"]));
+            }
+            set {
+                this["SoundOn"] = value;
+            }
+        }
     }
 }

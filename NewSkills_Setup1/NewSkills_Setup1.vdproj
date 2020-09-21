@@ -15,13 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
+        "MsmKey" = "8:_316907A554C41F8309B257A06CC8754F"
+        "OwnerKey" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6FBE1486424840EF909098B0D1F66488"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B933EE83B4C64E8AA71F98A77FF663B7"
+        "MsmKey" = "8:_8B86B0C05BB7DA05DF5DEFF4F6835DC4"
+        "OwnerKey" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -29,6 +41,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_316907A554C41F8309B257A06CC8754F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8B86B0C05BB7DA05DF5DEFF4F6835DC4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -126,10 +150,41 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B933EE83B4C64E8AA71F98A77FF663B7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_316907A554C41F8309B257A06CC8754F"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\skills.ico"
-            "TargetName" = "8:skills.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NewSkillsLicenceService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_316907A554C41F8309B257A06CC8754F"
+                    {
+                    "Name" = "8:NewSkillsLicenceService.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NewSkillsLicenceService.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B1EE7EC0F9D3416F9DE2BB0D7B5B17B8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FBE1486424840EF909098B0D1F66488"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\icon.ico"
+            "TargetName" = "8:icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_B1EE7EC0F9D3416F9DE2BB0D7B5B17B8"
             "Condition" = "8:"
@@ -144,6 +199,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B86B0C05BB7DA05DF5DEFF4F6835DC4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8B86B0C05BB7DA05DF5DEFF4F6835DC4"
+                    {
+                    "Name" = "8:WpfAnimatedGif.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:WpfAnimatedGif.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B1EE7EC0F9D3416F9DE2BB0D7B5B17B8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -203,7 +289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:NewSkills_Setup1"
         "ProductCode" = "8:{2F058734-2E05-445F-BDB3-E38387F21271}"
-        "PackageCode" = "8:{55C98F40-0484-4CB6-83DD-0DFF3FE5314F}"
+        "PackageCode" = "8:{C4E7BFAF-F477-41FE-80D7-E28C8E2E7F78}"
         "UpgradeCode" = "8:{AC6D2E66-0EE4-4327-8926-488A20334680}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -323,9 +409,9 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_337A4804E433404D9821E2D357A6B374"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8A98F507F37948E291234FD143B52EEF"
             {
-            "Name" = "8:newSkills"
+            "Name" = "8:NS"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -334,12 +420,12 @@
             "Target" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
             "Folder" = "8:_F403329311924A86946257F28EA0424E"
             "WorkingFolder" = "8:_B1EE7EC0F9D3416F9DE2BB0D7B5B17B8"
-            "Icon" = "8:_B933EE83B4C64E8AA71F98A77FF663B7"
+            "Icon" = "8:_6FBE1486424840EF909098B0D1F66488"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FCD10121902442FF844D859316AA09F6"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F5F65E8BC17640D59CECEA1C715104F7"
             {
-            "Name" = "8:NewSkills"
+            "Name" = "8:NS"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -348,7 +434,7 @@
             "Target" = "8:_AF33A6EC1020435EA2DA64E1156C1FEF"
             "Folder" = "8:_C53F54A24BA64AADBEE0615A498D9A32"
             "WorkingFolder" = "8:_B1EE7EC0F9D3416F9DE2BB0D7B5B17B8"
-            "Icon" = "8:_B933EE83B4C64E8AA71F98A77FF663B7"
+            "Icon" = "8:_6FBE1486424840EF909098B0D1F66488"
             "Feature" = "8:"
             }
         }

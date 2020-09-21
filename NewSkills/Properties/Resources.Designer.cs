@@ -61,11 +61,1723 @@ namespace NewSkills.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_a1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_a1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_a2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_a2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_be1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_be1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_be2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_be2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ce1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ce1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ce2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ce2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_che1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_che1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_che2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_che2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_de1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_de1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_de2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_de2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_e1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_e1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_e2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_e2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ef1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ef1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ef2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ef2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_el_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_el_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_el_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_el_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_em1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_em1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_em2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_em2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_en1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_en1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_en2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_en2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_er1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_er1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_er2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_er2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_es1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_es1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_es2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_es2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ge1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ge1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ge2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ge2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_i_kratnoe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_i_kratnoe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_i_kratnoe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_i_kratnoe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_i1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_i1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_i2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_i2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_je1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_je1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_je2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_je2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_jo1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_jo1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_jo2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_jo2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ka1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ka1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ka2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ka2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_myagkij_znak1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_myagkij_znak1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_myagkij_znak2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_myagkij_znak2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_o1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_o1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_o2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_o2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_pe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_pe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_pe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_pe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_sha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_sha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_sha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_sha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_shcha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_shcha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_shcha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_shcha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_te1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_te1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_te2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_te2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_tvyordyj_znak1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_tvyordyj_znak1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_tvyordyj_znak2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_tvyordyj_znak2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_u1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_u1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_u2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_u2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ve1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ve1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ve2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ve2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_y1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_y1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_y2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_y2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ya1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ya1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ya2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ya2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_yu1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_yu1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_yu2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_yu2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ze1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ze1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_ze2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_ze2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_zhe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_zhe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Bukva_zhe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Bukva_zhe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_chetyre1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_chetyre1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_chetyre2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_chetyre2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_devyat_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_devyat_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_devyat_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_devyat_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_dva1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_dva1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_dva2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_dva2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_nol_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_nol_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_nol_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_nol_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_odin1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_odin1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_odin2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_odin2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_pyat_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_pyat_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_pyat_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_pyat_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_sem_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_sem_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_sem_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_sem_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_shest_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_shest_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_shest_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_shest_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_tri1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_tri1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_tri2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_tri2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_vosem_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_vosem_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Cifra_vosem_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Cifra_vosem_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Defis1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Defis1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Defis2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Defis2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Dvoetochie1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Dvoetochie1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Dvoetochie2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Dvoetochie2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Kavychki1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Kavychki1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Kavychki2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Kavychki2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Nizhnee_podchyorkivanie1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Nizhnee_podchyorkivanie1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Nizhnee_podchyorkivanie2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Nizhnee_podchyorkivanie2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Nomer1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Nomer1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Nomer2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Nomer2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Plyus1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Plyus1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Plyus2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Plyus2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Probel_levoj1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Probel_levoj1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Probel_levoj2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Probel_levoj2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Probel_pravoj1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Probel_pravoj1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Probel_pravoj2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Probel_pravoj2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Procent1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Procent1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Procent2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Procent2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Ravno1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Ravno1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Ravno2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Ravno2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Skobka_otkryvaetsya1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Skobka_otkryvaetsya1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Skobka_otkryvaetsya2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Skobka_otkryvaetsya2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Skobka_zakryvaetsya1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Skobka_zakryvaetsya1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Skobka_zakryvaetsya2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Skobka_zakryvaetsya2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Tochka_s_zapyatoj1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Tochka_s_zapyatoj1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Tochka_s_zapyatoj2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Tochka_s_zapyatoj2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Tochka1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Tochka1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Tochka2wav {
+            get {
+                return ResourceManager.GetStream("audio_Tochka2wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Vopros1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Vopros1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Vopros2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Vopros2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Vosklicatel_nyj_znak1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Vosklicatel_nyj_znak1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Vosklicatel_nyj_znak2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Vosklicatel_nyj_znak2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_A1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_A1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_A2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_A2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Be1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Be1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Be2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Be2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ce1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ce1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ce2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ce2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Che1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Che1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_CHe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_CHe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_De1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_De1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_De2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_De2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_E1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_E1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_E2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_E2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ef1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ef1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ef2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ef2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_El_1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_El_1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_El_2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_El_2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Em1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Em1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Em2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Em2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_En1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_En1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_En2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_En2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Er1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Er1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Er2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Er2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Es1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Es1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Es2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Es2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ge1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ge1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ge2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ge2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_I_kratnoe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_I_kratnoe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_I_kratnoe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_I_kratnoe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_I1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_I1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_I2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_I2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ja1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ja1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ja2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ja2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ju1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ju1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ju2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ju2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ka1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ka1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ka2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ka2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Myagkij_znak1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Myagkij_znak1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Myagkij_znak2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Myagkij_znak2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_O1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_O1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_O2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_O2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Pe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Pe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Pe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Pe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Sha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Sha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Sha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Sha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Shcha1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Shcha1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Shcha2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Shcha2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Te1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Te1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Te2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Te2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Tvyordyj_znak1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Tvyordyj_znak1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Tvyordyj_znak2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Tvyordyj_znak2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_U1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_U1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_U2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_U2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ve1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ve1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ve2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ve2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Y1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Y1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Y2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Y2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ye1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ye1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ye2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ye2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Yo1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Yo1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Yo2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Yo2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ze1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ze1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Ze2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Ze2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Zhe1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Zhe1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zaglavnaya_Zhe2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zaglavnaya_Zhe2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zapyataya1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zapyataya1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zapyataya2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zapyataya2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zvezdochka1_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zvezdochka1_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream audio_Zvezdochka2_wav {
+            get {
+                return ResourceManager.GetStream("audio_Zvezdochka2_wav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap close_icon {
             get {
                 object obj = ResourceManager.GetObject("close_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Einstein {
+            get {
+                object obj = ResourceManager.GetObject("Einstein", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Einstein1 {
+            get {
+                object obj = ResourceManager.GetObject("Einstein1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -81,8 +1793,7 @@ namespace NewSkills.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to телевизоре для повышения печати. 
-        ///Удачи!.
+        ///   Looks up a localized string similar to в нашем.
         /// </summary>
         public static string inputText {
             get {
@@ -1046,6 +2757,26 @@ namespace NewSkills.Properties {
         public static System.Drawing.Bitmap settings_icon {
             get {
                 object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soundOff {
+            get {
+                object obj = ResourceManager.GetObject("soundOff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soundOn {
+            get {
+                object obj = ResourceManager.GetObject("soundOn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,7 +15,7 @@ namespace NewSkills.ViewModel
         //Fields
         private IMainWindowsCodeBehind _MainCodeBehind;
 
-        //ctor
+        //Conctructor
         public FirstViewModel(IMainWindowsCodeBehind codeBehind)
         {
             if (codeBehind == null) throw new ArgumentNullException(nameof(codeBehind));
