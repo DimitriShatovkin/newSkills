@@ -38,30 +38,5 @@ namespace NewSkills.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(InputText)));
             }
         }
-
-
-        //Commands
-        //
-        /// <summary>
-        /// Сообщение пользователю
-        /// </summary>
-        private RelayCommand _ShowMessageCommand;
-        public RelayCommand ShowMessageCommand
-        {
-            get
-            {
-                return _ShowMessageCommand = _ShowMessageCommand ??
-                  new RelayCommand(OnShowMessage, CanShowMessage);
-            }
-        }
-        private bool CanShowMessage()
-        {
-            return true;
-        }
-        private void OnShowMessage()
-        {
-            _MainCodeBehind.ShowMessage($"Вы ввели: {InputText}");
-        }
-
     }
 }

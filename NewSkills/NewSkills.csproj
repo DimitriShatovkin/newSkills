@@ -77,12 +77,21 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,6 +114,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\KeyGenerator.cs" />
     <Compile Include="Controller\LicenseServiceController.cs" />
     <Compile Include="Controller\StreamReaderController.cs" />
     <Compile Include="Controller\UtilController.cs" />
@@ -112,6 +122,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Service References\LicenceServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -124,7 +139,7 @@
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="ViewModel\NextLetterService.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\SecondViewModel.cs" />
+    <Compile Include="ViewModel\StartConditionViewModel.cs" />
     <Compile Include="View\CongratulationWindow.xaml.cs">
       <DependentUpon>CongratulationWindow.xaml</DependentUpon>
     </Compile>
@@ -136,6 +151,9 @@
     </Compile>
     <Compile Include="View\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StartConditionView.xaml.cs">
+      <DependentUpon>StartConditionView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\StartConditionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PopupUserControl.xaml.cs">
@@ -176,11 +198,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -203,7 +220,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -544,205 +563,194 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\LicenceService\LicenceService\NewSkillsLicenseService.csproj">
-      <Project>{bed22ef6-e699-4f40-bcd7-527312e1ae84}</Project>
-      <Name>NewSkillsLicenseService</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Resources\svitolk129.png" />
     <Resource Include="Resources\soundOff.png" />
     <Resource Include="Resources\soundOn.png" />
     <Resource Include="icon.ico" />
-    <Content Include="Resources\audio_a.wav" />
-    <None Include="Resources\audio_Zaglavnaya_CHe2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_De2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_E2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ef2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_El%272.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Em2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_En2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Er2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Es2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ge2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ha2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_I_kratnoe2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_I2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ja2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ju2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ka2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Myagkij_znak2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_O2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Pe2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Sha2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Shcha2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Te2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Tvyordyj_znak2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_U2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ve2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Y2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ye2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Yo2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ze2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Zhe2.wav.wav" />
-    <None Include="Resources\audio_Zapyataya2.wav.wav" />
-    <None Include="Resources\audio_Bukva_a2.wav.wav" />
-    <None Include="Resources\audio_Bukva_be2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ce2.wav.wav" />
-    <None Include="Resources\audio_Bukva_che2.wav.wav" />
-    <None Include="Resources\audio_Bukva_de2.wav.wav" />
-    <None Include="Resources\audio_Bukva_e2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ef2.wav.wav" />
-    <None Include="Resources\audio_Bukva_el%272.wav.wav" />
-    <None Include="Resources\audio_Bukva_em2.wav.wav" />
-    <None Include="Resources\audio_Bukva_en2.wav.wav" />
-    <None Include="Resources\audio_Bukva_er2.wav.wav" />
-    <None Include="Resources\audio_Bukva_es2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ge2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ha2.wav.wav" />
-    <None Include="Resources\audio_Bukva_i_kratnoe2.wav.wav" />
-    <None Include="Resources\audio_Bukva_i2.wav.wav" />
-    <None Include="Resources\audio_Bukva_je2.wav.wav" />
-    <None Include="Resources\audio_Bukva_jo2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ka2.wav.wav" />
-    <None Include="Resources\audio_Bukva_myagkij_znak2.wav.wav" />
-    <None Include="Resources\audio_Bukva_o2.wav.wav" />
-    <None Include="Resources\audio_Bukva_pe2.wav.wav" />
-    <None Include="Resources\audio_Bukva_sha2.wav.wav" />
-    <None Include="Resources\audio_Bukva_shcha2.wav.wav" />
-    <None Include="Resources\audio_Bukva_te2.wav.wav" />
-    <None Include="Resources\audio_Bukva_tvyordyj_znak2.wav.wav" />
-    <None Include="Resources\audio_Bukva_u2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ve2.wav.wav" />
-    <None Include="Resources\audio_Bukva_y2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ya2.wav.wav" />
-    <None Include="Resources\audio_Bukva_yu2.wav.wav" />
-    <None Include="Resources\audio_Bukva_ze2.wav.wav" />
-    <None Include="Resources\audio_Bukva_zhe2.wav.wav" />
-    <None Include="Resources\audio_Cifra_chetyre2.wav.wav" />
-    <None Include="Resources\audio_Cifra_devyat%272.wav.wav" />
-    <None Include="Resources\audio_Cifra_dva2.wav.wav" />
-    <None Include="Resources\audio_Cifra_nol%272.wav.wav" />
-    <None Include="Resources\audio_Cifra_odin2.wav.wav" />
-    <None Include="Resources\audio_Cifra_pyat%272.wav.wav" />
-    <None Include="Resources\audio_Cifra_sem%272.wav.wav" />
-    <None Include="Resources\audio_Cifra_shest%272.wav.wav" />
-    <None Include="Resources\audio_Cifra_tri2.wav.wav" />
-    <None Include="Resources\audio_Cifra_vosem%272.wav.wav" />
-    <None Include="Resources\audio_Defis2.wav.wav" />
-    <None Include="Resources\audio_Dvoetochie2.wav.wav" />
-    <None Include="Resources\audio_Kavychki2.wav.wav" />
-    <None Include="Resources\audio_Nizhnee_podchyorkivanie2.wav.wav" />
-    <None Include="Resources\audio_Nomer2.wav.wav" />
-    <None Include="Resources\audio_Plyus2.wav.wav" />
-    <None Include="Resources\audio_Probel_levoj2.wav.wav" />
-    <None Include="Resources\audio_Probel_pravoj2.wav.wav" />
-    <None Include="Resources\audio_Procent2.wav.wav" />
-    <None Include="Resources\audio_Ravno2.wav.wav" />
-    <None Include="Resources\audio_Skobka_otkryvaetsya2.wav.wav" />
-    <None Include="Resources\audio_Skobka_zakryvaetsya2.wav.wav" />
-    <None Include="Resources\audio_Tochka_s_zapyatoj2.wav.wav" />
-    <None Include="Resources\audio_Tochka2wav.wav" />
-    <None Include="Resources\audio_Vopros2.wav.wav" />
-    <None Include="Resources\audio_Vosklicatel%27nyj_znak2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_A2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Be2.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ce2.wav.wav" />
-    <None Include="Resources\audio_Bukva_a1.wav.wav" />
-    <None Include="Resources\audio_Bukva_be1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ce1.wav.wav" />
-    <None Include="Resources\audio_Bukva_che1.wav.wav" />
-    <None Include="Resources\audio_Bukva_de1.wav.wav" />
-    <None Include="Resources\audio_Bukva_e1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ef1.wav.wav" />
-    <None Include="Resources\audio_Bukva_el%271.wav.wav" />
-    <None Include="Resources\audio_Bukva_em1.wav.wav" />
-    <None Include="Resources\audio_Bukva_en1.wav.wav" />
-    <None Include="Resources\audio_Bukva_er1.wav.wav" />
-    <None Include="Resources\audio_Bukva_es1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ge1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ha1.wav.wav" />
-    <None Include="Resources\audio_Bukva_i_kratnoe1.wav.wav" />
-    <None Include="Resources\audio_Bukva_i1.wav.wav" />
-    <None Include="Resources\audio_Bukva_je1.wav.wav" />
-    <None Include="Resources\audio_Bukva_jo1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ka1.wav.wav" />
-    <None Include="Resources\audio_Bukva_myagkij_znak1.wav.wav" />
-    <None Include="Resources\audio_Bukva_o1.wav.wav" />
-    <None Include="Resources\audio_Bukva_pe1.wav.wav" />
-    <None Include="Resources\audio_Bukva_sha1.wav.wav" />
-    <None Include="Resources\audio_Bukva_shcha1.wav.wav" />
-    <None Include="Resources\audio_Bukva_te1.wav.wav" />
-    <None Include="Resources\audio_Bukva_tvyordyj_znak1.wav.wav" />
-    <None Include="Resources\audio_Bukva_u1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ve1.wav.wav" />
-    <None Include="Resources\audio_Bukva_y1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ya1.wav.wav" />
-    <None Include="Resources\audio_Bukva_yu1.wav.wav" />
-    <None Include="Resources\audio_Bukva_ze1.wav.wav" />
-    <None Include="Resources\audio_Bukva_zhe1.wav.wav" />
-    <None Include="Resources\audio_Cifra_chetyre1.wav.wav" />
-    <None Include="Resources\audio_Cifra_devyat%271.wav.wav" />
-    <None Include="Resources\audio_Cifra_dva1.wav.wav" />
-    <None Include="Resources\audio_Cifra_nol%271.wav.wav" />
-    <None Include="Resources\audio_Cifra_odin1.wav.wav" />
-    <None Include="Resources\audio_Cifra_pyat%271.wav.wav" />
-    <None Include="Resources\audio_Cifra_sem%271.wav.wav" />
-    <None Include="Resources\audio_Cifra_shest%271.wav.wav" />
-    <None Include="Resources\audio_Cifra_tri1.wav.wav" />
-    <None Include="Resources\audio_Cifra_vosem%271.wav.wav" />
-    <None Include="Resources\audio_Defis1.wav.wav" />
-    <None Include="Resources\audio_Dvoetochie1.wav.wav" />
-    <None Include="Resources\audio_Kavychki1.wav.wav" />
-    <None Include="Resources\audio_Nizhnee_podchyorkivanie1.wav.wav" />
-    <None Include="Resources\audio_Nomer1.wav.wav" />
-    <None Include="Resources\audio_Plyus1.wav.wav" />
-    <None Include="Resources\audio_Probel_levoj1.wav.wav" />
-    <None Include="Resources\audio_Probel_pravoj1.wav.wav" />
-    <None Include="Resources\audio_Procent1.wav.wav" />
-    <None Include="Resources\audio_Ravno1.wav.wav" />
-    <None Include="Resources\audio_Skobka_otkryvaetsya1.wav.wav" />
-    <None Include="Resources\audio_Skobka_zakryvaetsya1.wav.wav" />
-    <None Include="Resources\audio_Tochka_s_zapyatoj1.wav.wav" />
-    <None Include="Resources\audio_Tochka1.wav.wav" />
-    <None Include="Resources\audio_Vopros1.wav.wav" />
-    <None Include="Resources\audio_Vosklicatel%27nyj_znak1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_A1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Be1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ce1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Che1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_De1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_E1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ef1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_El%271.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Em1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_En1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Er1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Es1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ge1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ha1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_I_kratnoe1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_I1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ja1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ju1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ka1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Myagkij_znak1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_O1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Pe1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Sha1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Shcha1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Te1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Tvyordyj_znak1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_U1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ve1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Y1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ye1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Yo1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Ze1.wav.wav" />
-    <None Include="Resources\audio_Zaglavnaya_Zhe1.wav.wav" />
-    <None Include="Resources\audio_Zapyataya1.wav.wav" />
-    <Content Include="Resources\audio_ze1.1.wav" />
-    <None Include="Resources\audio_Zvezdochka2.wav.wav" />
-    <None Include="Resources\audio_Zvezdochka1.wav.wav" />
+    <Resource Include="View\LicenseKeys.txt" />
+    <Resource Include="Resources\checkBoxInActive.png" />
+    <Resource Include="Resources\checkBoxActive.png" />
+    <EmbeddedResource Include="Resources\audio_Bukva_a12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_a22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_be12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_be22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ce12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ce22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_che12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_che22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_de12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_de22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_e12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_e22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ef12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_el%2712.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_el%2722.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_em12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_em22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_en12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_en22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_er12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_er22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_es12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_es22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ge12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ge22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ha12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ha22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_i12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_i22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_i_kratnoe12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_i_kratnoe22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ka12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ka22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_myagkij_znak11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_myagkij_znak22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_o12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_o22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_pe12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_pe22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_sha12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_sha22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_shcha12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_shcha22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_te12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_te22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_tvyordyj_znak11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_tvyordyj_znak22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_u12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_u22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ve12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ve22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_y12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_y22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ya12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ya22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ye12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ye22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_yo12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_yo22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_yu12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_yu22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ze12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_ze22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_zhe12.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Bukva_zhe22.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_chetyre11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_chetyre21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_devyat%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_devyat%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_dva11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_dva21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_nol%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_nol%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_odin11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_pyat%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_odin21.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_pyat%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_sem%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_sem%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_shest%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_shest%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_tri11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_tri21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_vosem%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Cifra_vosem%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Defis11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Defis21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Dvoetochie11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Dvoetochie21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Kavychki11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Kavychki21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Nizhnee_podchyorkivanie11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Nizhnee_podchyorkivanie21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Nomer11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Nomer21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Plyus11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Plyus21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Probel_levoj11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Probel_levoj21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Probel_pravoj11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Probel_pravoj21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Procent11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Procent21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Ravno11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Ravno21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Skobka_otkryvaetsya11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Skobka_otkryvaetsya21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Skobka_zakryvaetsya11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Skobka_zakryvaetsya21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Tochka11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Tochka21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Tochka_s_zapyatoj11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Tochka_s_zapyatoj21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Voprositel%27nyj znak11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Voprositel%27nyj znak21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Vosklicatel%27nyj_znak11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Vosklicatel%27nyj_znak21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_A11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_A21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Be11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Be21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ce11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ce21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Che11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Che21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_De11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_De21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_E11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_E21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ef11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ef21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_El%2711.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_El%2721.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Em11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Em21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_En11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_En21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Er11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Er21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Es11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Es21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ge11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ge21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ha11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ha21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_I11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_I21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_I_kratnoe11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_I_kratnoe21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ka11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ka21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Pe11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Pe21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Sha11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Sha21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Shcha11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Shcha21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Te11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Te21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_U11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_U21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ve11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ve21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ya11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ya21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ye11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ye21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Yo11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Yo21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Yu11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Yu21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ze11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Ze21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Zhe11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_Zhe21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_О11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zaglavnaya_О21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zapyataya11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zapyataya21.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zvezdochka11.wav.wav" />
+    <EmbeddedResource Include="Resources\audio_Zvezdochka21.wav.wav" />
     <Content Include="Resources\Einstein1.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

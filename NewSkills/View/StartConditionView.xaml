@@ -1,0 +1,189 @@
+﻿<Window x:Class="NewSkills.View.StartConditionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewSkills.View"
+        mc:Ignorable="d" 
+        ScrollViewer.CanContentScroll="True">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel Margin="40,0">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="../Resources/svitolk129.png" Stretch="None"/>
+                </StackPanel.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Grid.Column="1" Margin="12,0,0,0" HorizontalContentAlignment="Center">
+                        <Run FontWeight="Bold" FontSize="25">Выполните все требования, для более успешного прохождения тренажера.</Run>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50"  Margin="35,10,0,10" >
+                    <Button x:Name="btn1" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn1_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical">
+                        <Label Grid.Column="1" Margin="12,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Прочтите или прослушайте пособие и инструкцию по использованию тренажера.
+                            </Run>
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="120"  Margin="35,10,0,10" >
+                    <Button x:Name="btn2" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn2_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical" Height="120" Margin="10,0,0,4">
+                        <Label Grid.Column="1" Margin="12,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">Изучите дополнительные методы и упражнения, помогающие легче пройти</Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="12,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                обучение (желательно потренироваться): Самогипноз – метод, рекомендуемый
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="12,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                нами лёгок в применении. Пальминг, Энергетический всплеск.
+                            </Run>
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="100"  Margin="35,10,0,10" >
+                    <Button x:Name="btn3" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn3_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <Label Grid.Column="1" Margin="20,0,0,0" Width="931">
+                        <Run FontWeight="Bold" FontSize="23">
+                            Примите решение, что вы будете проходить обучение на тренажере для 
+                        </Run>
+                    </Label>
+                    <Label Grid.Column="1" Margin="20,0,0,0">
+                        <Run FontWeight="Bold" FontSize="23">
+                            получения слепой печати.
+                        </Run>
+                    </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50"  Margin="35,10,0,10" >
+                    <Button x:Name="btn4" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn4_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <Label Grid.Column="1" Margin="20,0,0,0">
+                        <Run FontWeight="Bold" FontSize="23">Определите удобное время, которое вы посвятите получению навыка слепой печати.</Run>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="100"  Margin="35,10,0,10" >
+                    <Button x:Name="btn5" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn5_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical">
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Подготовьте клавиатуру к прохождению обучения на тренажере: освободите её от
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                 механического мусора, протрите антисептиком.
+                            </Run>
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="120"  Margin="35,10,0,10">
+                    <Button x:Name="btn6" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn6_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical">
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Поставьте стакан с чистой водой рядом с клавиатурой, так чтобы не задеть руками.
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Он будет нужен в процессе обучения при проговаривании ориентировочных 
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                команд для увлажнения горла и рта.
+                            </Run>
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="80"  Margin="35,10,0,10">
+                    <Button x:Name="btn7" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn7_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical">
+                    <Label Grid.Column="1" Margin="20,0,0,0">
+                        <Run FontWeight="Bold" FontSize="23">
+                            Отключите все сигналы, которые могут Вам потревожить.
+                        </Run>
+                    </Label>
+                    <Label Grid.Column="1" Margin="20,0,0,0">
+                        <Run FontWeight="Bold" FontSize="23">
+                           - Телефоны, смартфоны,все мессенджеры
+                        </Run>
+                    </Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="50"  Margin="35,10,0,10" >
+                    <Button x:Name="btn8" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn8_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <Label Grid.Column="1" Margin="20,0,0,0">
+                        <Run FontWeight="Bold" FontSize="23">
+                            Попросите близких людей не тревожить вас во время занятий.
+                        </Run>
+                    </Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="140"  Margin="35,10,0,10" >
+                    <Button x:Name="btn9" Height="28" VerticalAlignment="Top" Margin="0,10" Click="btn9_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/checkBoxInActive.png" Width="25" Height="25"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Vertical">
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Изучите правильную постановку рук на клавиатуре, в инструкции и пособии.
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                Потренируйтесь и убедитесь, что вы хорошо устанавливаете руки на клавиатуре 
+                            </Run>
+                        </Label>
+                        <Label Grid.Column="1" Margin="20,0,0,0">
+                            <Run FontWeight="Bold" FontSize="23">
+                                на клавишах "фыва" и "олдж", кисти рук нависают над клавиатурой.
+                            </Run>
+                        </Label>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="BtnForward" VerticalAlignment="Top" Margin="0,10,20,20" Width="135" Height="28" HorizontalAlignment="Right" Click="BtnForward_Click">
+                    <Run FontSize="15" FontWeight="Bold">К обучению</Run>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

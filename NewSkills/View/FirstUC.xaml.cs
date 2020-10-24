@@ -7,7 +7,7 @@ using NewSkills.ViewModel;
 using NewSkills.Controller;
 using System.IO;
 using System.Windows.Media.Imaging;
-using System.Media; //подключили пространство имен SoundPlayer  
+using System.Media;
 using System.Windows;
 using System.Reflection;
 using System.Drawing;
@@ -33,7 +33,6 @@ namespace NewSkills.View
         public bool spaceButtonClicked = false;
         private string inputText;
         private Label progressLabel;
-        private bool soundOn;
 
         NextLetterService nextLetterClass = new NextLetterService();
         NextLetterService.NextLetterWrapper nextLetterWrapper = new NextLetterService.NextLetterWrapper();
@@ -267,6 +266,11 @@ namespace NewSkills.View
 
         private void previewKeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Tab)
+            {
+                this.typingTextTxt.Focus();
+            }
+
             if (e.Key == Key.Space)
             {
                 spaceButtonClicked = true;
@@ -293,17 +297,24 @@ namespace NewSkills.View
             NextLetterService.NextLetterWrapper lastLetterSpaceDirectionDescription = nextLetterClass.getLetter(lastLetter, fontVariantSettings);
             image.Source = getImagePathFromProperty(Properties.Resources.letter_space);
 
-            if (fontVariantSettings == 0) {
+            if (fontVariantSettings == 0)
+            {
                 if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
                 {
                     suggestionMessage.Text = " Пробел «space» – левой нулевым на месте";
-                    voiceMessages(Properties.Resources.audio_Probel_levoj2_wav);
+                    if (Properties.Settings.Default.SoundOn)
+                    {
+                        voiceMessages(Properties.Resources.audio_Probel_levoj11_wav);
+                    }
                     this.typingTextTxt.Focus();
                 }
                 else
                 {
                     suggestionMessage.Text = " Пробел «space» – правой нулевым на месте";
-                    voiceMessages(Properties.Resources.audio_Probel_levoj2_wav);
+                    if (Properties.Settings.Default.SoundOn)
+                    {
+                        voiceMessages(Properties.Resources.audio_Probel_pravoj11_wav);
+                    }
                     this.typingTextTxt.Focus();
                 }
             }
@@ -313,13 +324,20 @@ namespace NewSkills.View
                 if (lastLetterSpaceDirectionDescription.directionDescription == "LeftSpace")
                 {
                     suggestionMessage.Text = " Пробел «space» – левой большим на месте";
-                    voiceMessages(Properties.Resources.audio_Probel_levoj1_wav);
+                    if (Properties.Settings.Default.SoundOn)
+                    {
+                        voiceMessages(Properties.Resources.audio_Probel_levoj21_wav);
+                        
+                    }
                     this.typingTextTxt.Focus();
                 }
                 else
                 {
                     suggestionMessage.Text = " Пробел «space» – правой большим на месте";
-                    voiceMessages(Properties.Resources.audio_Probel_pravoj1_wav);
+                    if (Properties.Settings.Default.SoundOn)
+                    {
+                        voiceMessages(Properties.Resources.audio_Probel_pravoj21_wav);
+                    }
                     this.typingTextTxt.Focus();
                 }
             }

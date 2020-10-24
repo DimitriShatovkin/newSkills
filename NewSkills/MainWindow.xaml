@@ -224,6 +224,7 @@
                 <!--add 3 buttons - Home, Profile and Settings-->
                 <Button x:Name="Home"
                         Height="100"
+                        Focusable="False"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Margin="0,180,0,20" Style="{DynamicResource HomeBtnStyle}" 
@@ -238,7 +239,7 @@
 
                 </Button>
 
-                <Button x:Name="Profile"
+                <!--<Button x:Name="Profile"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -247,14 +248,15 @@
                         MouseEnter="Profile_MouseEnter" 
                         MouseLeave="Profile_MouseLeave">
 
-                    <!--add image-->
+                    --><!--add image--><!--
                     <Image Source="Resources/profile_icon.png"
                            Stretch="None">
                     </Image>
 
-                </Button>
+                </Button>-->
 
                 <Button x:Name="Settings"
+                        Focusable="False"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -319,7 +321,7 @@
             </Popup>
             <Label x:Name="pauseLbl" Content="" HorizontalContentAlignment="Center"
                    FontSize="40"  HorizontalAlignment="Center" 
-                   Margin="245,84,131.6,0" VerticalAlignment="Top" Width="385"/>
+                   Margin="245,84,131.6,0" VerticalAlignment="Top" Width="550"/>
             <Button x:Name="soundButton" Click="soundButton_Click" HorizontalAlignment="Left" Margin="55,57,0,0" VerticalAlignment="Top" Width="30" Height="30">
                 <StackPanel>
                     <Image  Source="Resources/soundOn.png"/>

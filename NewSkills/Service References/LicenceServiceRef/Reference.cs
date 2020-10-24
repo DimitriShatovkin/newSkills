@@ -12,42 +12,42 @@ namespace NewSkills.LicenceServiceRef {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LicenceServiceRef.ILicenceService")]
-    public interface ILicenceService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LicenceServiceRef.ILicenseService")]
+    public interface ILicenseService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILicenceService/getLincenceRequest", ReplyAction="http://tempuri.org/ILicenceService/getLincenceRequestResponse")]
-        int getLincenceRequest(string licenceNumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILicenseService/getLincenseAndCPURequest", ReplyAction="http://tempuri.org/ILicenseService/getLincenseAndCPURequestResponse")]
+        object getLincenseAndCPURequest(string licenceNumber, string cpuId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILicenceServiceChannel : NewSkills.LicenceServiceRef.ILicenceService, System.ServiceModel.IClientChannel {
+    public interface ILicenseServiceChannel : NewSkills.LicenceServiceRef.ILicenseService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LicenceServiceClient : System.ServiceModel.ClientBase<NewSkills.LicenceServiceRef.ILicenceService>, NewSkills.LicenceServiceRef.ILicenceService {
+    public partial class LicenseServiceClient : System.ServiceModel.ClientBase<NewSkills.LicenceServiceRef.ILicenseService>, NewSkills.LicenceServiceRef.ILicenseService {
         
-        public LicenceServiceClient() {
+        public LicenseServiceClient() {
         }
         
-        public LicenceServiceClient(string endpointConfigurationName) : 
+        public LicenseServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public LicenceServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public LicenseServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public LicenceServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LicenseServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public LicenceServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LicenseServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public int getLincenceRequest(string licenceNumber) {
-            return base.Channel.getLincenceRequest(licenceNumber);
+        public object getLincenseAndCPURequest(string licenceNumber, string cpuId) {
+            return base.Channel.getLincenseAndCPURequest(licenceNumber, cpuId);
         }
     }
 }

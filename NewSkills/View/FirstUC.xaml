@@ -20,7 +20,7 @@
 
             <TextBlock HorizontalAlignment="Center" Name="exampleText" FontSize="28" Margin="0,0,0,0" Height="38" Width="600"></TextBlock>
 
-            <TextBox HorizontalAlignment="Center" Margin="0,5,4,0" MinHeight="42" FontSize="28" Text="{Binding InputText}" x:Name="typingTextTxt" TextChanged="typingTextChanged" 
+            <TextBox HorizontalAlignment="Center" AcceptsTab="False" Margin="0,5,4,0" MinHeight="42" FontSize="28" Text="{Binding InputText}" x:Name="typingTextTxt" TextChanged="typingTextChanged" 
                      PreviewKeyDown="previewKeyDown" VerticalContentAlignment="Top" Height="38" RenderTransformOrigin="0.5,0.423" Width="600"/>
         </StackPanel>
         <Grid Height="230" Margin="0,5" HorizontalAlignment="Center">

@@ -10,17 +10,12 @@ using System.Windows.Media;
 using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Collections.Generic;
 
 namespace NewSkills
 {
     public interface IMainWindowsCodeBehind
     {
-        /// <summary>
-        /// Показ сообщения для пользователя
-        /// </summary>
-        /// <param name="message">текст сообщения</param>
-        void ShowMessage(string message);
-
         /// <summary>
         /// Загрузка нужной View
         /// </summary>
@@ -37,6 +32,7 @@ namespace NewSkills
         First,
         Settings,
         LicenseView,
+        StartConditionView,
         CongratulationView
     }
     /// <summary>
@@ -46,8 +42,12 @@ namespace NewSkills
     {
         // Timer Variables
         private DispatcherTimer timer;
-        private int workTime = 1500;
         private bool soundOn = false;
+        private static int commonTime = 0;
+        public int CommonTime { get { return commonTime; } set { commonTime = value; } }
+
+    
+        private bool anyKeyPressed = false;
         // End of Timer Variables
 
         public MainWindow()
@@ -58,6 +58,7 @@ namespace NewSkills
             this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth);
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
             this.Loaded += MainWindow_Loaded;
+            this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
 
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
@@ -69,13 +70,15 @@ namespace NewSkills
         // тут высчитывается, должна ли работать пауза или печать
         private void Timer_Tick(object sender, EventArgs e)
         {
+            commonTime++;
+
             if (UtilController.BlockTextFieldAndTimer == false)
             {
                 if (UtilController.WorkTime > 0)
                 {
                     UtilController.ActivateWorkOrPause = false;
                     UtilController.WorkTime--;
-                    setTime(UtilController.WorkTime);
+                    setTime(UtilController.WorkTime);//1500
                 }
                 else if (UtilController.PauseTime > 0)
                 {
@@ -86,16 +89,48 @@ namespace NewSkills
 
                 if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == false)
                 {
-                    UtilController.ActivateWorkOrPause = true;
-                    UtilController.PauseTime = UtilController.AfterPauseTime;
+                        UtilController.ActivateWorkOrPause = true;
+                        UtilController.PauseTime = UtilController.AfterPauseTime;
+                    
                 }
                 else if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
                 {
-                    UtilController.WorkTime = UtilController.AfterWorkTime;
-                    UtilController.ActivateWorkOrPause = false;
+                    if (anyKeyPressed) {
+                        UtilController.WorkTime = UtilController.AfterWorkTime;
+                        UtilController.ActivateWorkOrPause = false;
+                        anyKeyPressed = false;
+
+                        if (CommonTime > UtilController.MaxCommonTime) {
+                            UtilController.WorkTime = UtilController.WorkTime;
+                            UtilController.PauseTime = UtilController.PauseAfterMaxCommonTime; 
+                        }
+                    }
                 }
+
+                if (UtilController.PauseTime == 0)
+                {
+                    pauseLbl.Content = "Нажмите любую клавишу"; 
+                }
+
             }
         }
+
+        void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (UtilController.WorkTime == 0 && UtilController.PauseTime == 0 && UtilController.ActivateWorkOrPause == true)
+            {
+                anyKeyPressed = true;
+            }
+            else {
+                anyKeyPressed = false;
+            }
+
+            if (e.Key == Key.Space)
+            {
+                anyKeyPressed = true;
+            }
+        }
+
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -106,14 +141,14 @@ namespace NewSkills
             //делаем эту вьюмодел контекстом данных
             this.DataContext = vm;
 
-            //загрузка стартовой View
-            if (Properties.Settings.Default.License == false)
+            if (Properties.Settings.Default.License == true)
             {
                 LoadView(ViewType.LicenseView);
             }
+            //загрузка стартовой View
             else
             {
-                LoadView(ViewType.First);
+                LoadView(ViewType.StartConditionView);
             }
         }
 
@@ -121,6 +156,14 @@ namespace NewSkills
         {
             switch (typeView)
             {
+                case ViewType.StartConditionView:
+                    menuVisibility(Visibility.Hidden);
+                    timeReset(Visibility.Hidden);
+                    StartConditionView conditionViewStart = new StartConditionView(progress, this);
+                    //conditionViewStart.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    //conditionViewStart.Owner = Application.Current.MainWindow;
+                    //conditionViewStart.Show();
+                    break;
                 case ViewType.First:
                     menuVisibility(Visibility.Visible);
                     timeReset(Visibility.Visible);
@@ -130,9 +173,7 @@ namespace NewSkills
                     this.OutputView.Content = viewF;
                     break;
                 case ViewType.Settings:
-                    SettingsView viewS = new SettingsView();
-                    SecondViewModel vmS = new SecondViewModel(this);
-                    // viewS.DataContext = vmS;
+                    SettingsView viewS = new SettingsView(this);
                     this.OutputView.Content = viewS;
                     break;
                 case ViewType.LicenseView:
@@ -149,10 +190,6 @@ namespace NewSkills
                     congratulationWindow.Owner = Application.Current.MainWindow;
                     congratulationWindow.Show();
                     congratulationWindow.loadVideo();
-
-                    //Place it in the directory of your application
-
-
                     break;
 
             }
@@ -171,8 +208,15 @@ namespace NewSkills
                 }
                 else
                 {
-                    UtilController.showPause(pauseLbl, time);
-                    timerTxt.Content = string.Format("Пауза 00:{0}:{1}", time / 60, time % 60); // 13: 50
+                    if (CommonTime > UtilController.MaxCommonTime)
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 30 минут");
+                    }
+                    else {
+                        UtilController.showPause(pauseLbl, "Отдых 5 минут");
+                    }
+                    
+                    timerTxt.Content = string.Format("Пауза 00:{0}:{1}", time / 60, time % 60); // 13:50
                 }
             }
             else if (time / 60 >= 10 && time % 60 < 10)
@@ -184,7 +228,14 @@ namespace NewSkills
                 }
                 else
                 {
-                    UtilController.showPause(pauseLbl, time);
+                    if (CommonTime > UtilController.MaxCommonTime)
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 30 минут");
+                    }
+                    else
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 5 минут");
+                    }
                     timerTxt.Content = string.Format("Пауза 00:{0}:0{1}", time / 60, time % 60); // 13:05
                 }
             }
@@ -197,7 +248,14 @@ namespace NewSkills
                 }
                 else
                 {
-                    UtilController.showPause(pauseLbl, time);
+                    if (CommonTime > UtilController.MaxCommonTime)
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 30 минут");
+                    }
+                    else
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 5 минут");
+                    }
                     timerTxt.Content = string.Format("Пауза 00:0{0}:{1}", time / 60, time % 60); // 09:59
                 }
             }
@@ -210,7 +268,14 @@ namespace NewSkills
                 }
                 else
                 {
-                    UtilController.showPause(pauseLbl, time);
+                    if (CommonTime > UtilController.MaxCommonTime)
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 30 минут");
+                    }
+                    else
+                    {
+                        UtilController.showPause(pauseLbl, "Отдых 5 минут");
+                    }
                     timerTxt.Content = string.Format("Пауза 00:0{0}:0{1}", time / 60, time % 60); // 11:05
                 }
             }
@@ -231,14 +296,6 @@ namespace NewSkills
             popup_uc.IsOpen = false;
         }
 
-        private void Profile_MouseEnter(object sender, MouseEventArgs e)
-        {
-            popup_uc.PlacementTarget = Profile;
-            popup_uc.Placement = PlacementMode.Right;
-            popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Профиль";
-        }
-
         private void Profile_MouseLeave(object sender, MouseEventArgs e)
         {
             popup_uc.Visibility = Visibility.Collapsed;
@@ -251,10 +308,7 @@ namespace NewSkills
             popup_uc.IsOpen = false;
         }
 
-        public void ShowMessage(string message)
-        {
-            throw new NotImplementedException();
-        }
+
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
@@ -266,9 +320,7 @@ namespace NewSkills
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            SettingsView viewS = new SettingsView();
-            SecondViewModel vmS = new SecondViewModel(this);
-            // viewS.DataContext = vmS;
+            SettingsView viewS = new SettingsView(this);
             this.OutputView.Content = viewS;
         }
 
@@ -284,7 +336,7 @@ namespace NewSkills
         private void menuVisibility(Visibility Visibility)
         {
             Home.Visibility = Visibility;
-            Profile.Visibility = Visibility;
+            // Profile.Visibility = Visibility;
             Settings.Visibility = Visibility;
         }
 
@@ -296,7 +348,7 @@ namespace NewSkills
             }
             else
             {
-                UtilController.WorkTime = workTime;
+                UtilController.WorkTime = UtilController.AfterPauseTime;
                 timerTxt.Visibility = Visibility.Visible;
             }
         }
@@ -307,15 +359,16 @@ namespace NewSkills
         }
 
 
-        private void setSoundImageContent(string soundOnUri,bool soundResourceSetting)
+        private void setSoundImageContent(string soundOnUri, bool soundResourceSetting)
         {
-            soundButton.Content = new System.Windows.Controls.Image{Source = new BitmapImage(new Uri("pack://application:,,,/Resources/"+ soundOnUri + ".png")),VerticalAlignment = VerticalAlignment.Center};
+            soundButton.Content = new System.Windows.Controls.Image { Source = new BitmapImage(new Uri("pack://application:,,,/Resources/" + soundOnUri + ".png")), VerticalAlignment = VerticalAlignment.Center };
             soundOn = soundResourceSetting;
             Properties.Settings.Default.SoundOn = soundResourceSetting;
             Properties.Settings.Default.Save();
         }
 
-        private void checkSoundContent() {
+        private void checkSoundContent()
+        {
 
             if (soundOn == false)
             {

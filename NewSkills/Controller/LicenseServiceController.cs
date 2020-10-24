@@ -8,14 +8,14 @@ namespace NewSkills.Controller
 {
     public class LicenseServiceController
     {
-        public int getLincenceRequest(string licenceNumber)
+        public int getLincenceRequest(string licenseNumber)
         {
-            int numberOne = int.Parse(licenceNumber.Substring(4, 1));
-            int numberTwo = int.Parse(licenceNumber.Substring(8, 1));
-            int numberThree = int.Parse(licenceNumber.Substring(10, 1));
-            int numberFour = int.Parse(licenceNumber.Substring(12, 1));
+            int numberOne = int.Parse(licenseNumber.Substring(3, 1));
+            int numberTwo = int.Parse(licenseNumber.Substring(8, 1));
+            int numberThree = int.Parse(licenseNumber.Substring(11, 1));
+            int numberFour = int.Parse(licenseNumber.Substring(17, 1));
 
-            return numberOne + numberTwo - numberThree + numberFour;
+            return numberOne + numberTwo - numberThree + numberFour + 19804;
         }
     }
 }

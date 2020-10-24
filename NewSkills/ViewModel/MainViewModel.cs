@@ -22,27 +22,5 @@ namespace NewSkills.ViewModel
 
             _MainCodeBehind = codeBehind;
         }
-
-        //Properties
-
-        //Commands
-
-        /// <summary>
-        /// Сообщение пользователю
-        /// </summary>
-        private RelayCommand _ShowMessageCommand;
-        public RelayCommand ShowMessageCommand
-        {
-            get { return _ShowMessageCommand = _ShowMessageCommand ??
-                    new RelayCommand(OnShowMessage, CanShowMessage); }
-        }
-        private bool CanShowMessage()
-        {
-            return true;
-        }
-        private void OnShowMessage()
-        {
-            _MainCodeBehind.ShowMessage("New Skills");
-        }   
     }
 }
